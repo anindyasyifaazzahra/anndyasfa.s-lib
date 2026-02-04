@@ -36,6 +36,7 @@
             max-width: 650px;
             box-shadow: 0 30px 60px rgba(0,0,0,0.3);
             animation: fadeIn 1.6s ease-in-out;
+            overflow: hidden;
         }
 
         .container::before {
@@ -64,6 +65,7 @@
             background: #f2b5c4;
             opacity: 0.9;
             border-radius: 8px;
+            z-index: 5;
         }
 
         h1 {
@@ -122,6 +124,102 @@
             font-size: 14px;
             letter-spacing: 1px;
         }
+        
+        .scrap {
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .paper {
+            inset: 0;
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(0,0,0,0.02),
+                    rgba(0,0,0,0.02) 1px,
+                    transparent 1px,
+                    transparent 4px
+                );
+            opacity: 0.4;
+        }
+
+        .newspaper {
+            top: 15px;
+            right: -40px;
+            width: 180px;
+            height: 120px;
+            background: #f5f1ea;
+            font-size: 10px;
+            color: #555;
+            padding: 10px;
+            transform: rotate(8deg);
+            clip-path: polygon(0 0, 95% 5%, 100% 50%, 92% 95%, 0 100%, 5% 50%);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+        }
+
+        .newspaper::before {
+            content: "old times • daily paper • stories • memory • archive";
+            line-height: 1.6;
+        }
+
+        .photo {
+            bottom: -45px;
+            left: -45px;
+            width: 150px;
+            height: 190px;
+            background:
+                linear-gradient(#eee, #ddd),
+                url("https://images.unsplash.com/photo-1520974735194-8f75a5f8c1a5?auto=format&fit=crop&w=300&q=60");
+            background-blend-mode: multiply;
+            background-size: cover;
+            border: 10px solid #fdfcf8;
+            transform: rotate(-6deg);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.3);
+        }
+
+        .flower {
+            top: -20px;
+            right: 80px;
+            font-size: 42px;
+            color: #b56a7a;
+            transform: rotate(-15deg);
+            opacity: 0.9;
+        }
+
+        .flower.small {
+            top: 90px;
+            left: -18px;
+            font-size: 28px;
+            color: #8f3b4f;
+        }
+
+        .tape-left {
+            top: 20px;
+            left: -35px;
+            width: 90px;
+            height: 26px;
+            background: #f2b5c4;
+            transform: rotate(-25deg);
+            opacity: 0.85;
+            border-radius: 6px;
+        }
+
+        .tape-right {
+            bottom: 20px;
+            right: -35px;
+            width: 90px;
+            height: 26px;
+            background: #f2b5c4;
+            transform: rotate(25deg);
+            opacity: 0.85;
+            border-radius: 6px;
+        }
+
+        .container * {
+            position: relative;
+            z-index: 2;
+        }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(30px); }
@@ -132,16 +230,17 @@
 <body>
 
 <div class="container">
+
+    <!-- Scrapbook layers -->
+    <div class="scrap paper"></div>
+    <div class="scrap newspaper"></div>
+    <div class="scrap flower">✿</div>
+    <div class="scrap flower small">❀</div>
+    <div class="scrap photo"></div>
+    <div class="scrap tape-left"></div>
+    <div class="scrap tape-right"></div>
+
     <div class="tape"></div>
-    <div class="tape corner"></div>
-    <div class="paperclip"></div>
-
-    <div class="doodle heart">♥</div>
-    <div class="doodle star">✦</div>
-    <div class="doodle leaf">❧</div>
-    <div class="doodle note">✎</div>
-
-    <div class="sticker"></div>
 
     <h1>COMING SOON-!</h1>
     <h2>Anindya Syifa Azzahra's Library</h2>
