@@ -86,9 +86,8 @@ button:hover {
         <input type="text" placeholder="Last Name" required>
         <input type="email" placeholder="Email" required>
         <input type="tel" placeholder="Phone" required>
-        <input type="password" placeholder="Password" required>
-        <input type="password" placeholder="Create New Password" required>
-        <input type="password" placeholder="Confirm New Password" required>
+        <input type="password" placeholder="New Password" required>
+        <input type="password" placeholder="Confirm Password" required>
         <button type="submit">Daftar</button>
     </form>
 </div>
@@ -104,7 +103,8 @@ document.getElementById("registerForm").addEventListener("submit", function(e) {
         lastName: inputs[1].value,
         email: inputs[2].value,
         phone: inputs[3].value,
-        password: inputs[4].value
+        newPassword: inputs[4].value,
+        confirmPassword: inputs[5].value
     };
 
     localStorage.setItem("user", JSON.stringify(user));
