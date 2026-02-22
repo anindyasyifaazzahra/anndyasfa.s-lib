@@ -83,14 +83,28 @@ button:hover {
 
     <form id="registerForm">
         <script>
+    
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone" required>
+        <input type="password" placeholder="New Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+
+</script>
+
+    </form>
+</div>
+
+<script>
 document.getElementById("registerForm").addEventListener("submit", function(e){
     e.preventDefault();
     let firstName = this.querySelectorAll("input")[0].value;
     let lastName = this.querySelectorAll("input")[1].value;
     let email = this.querySelectorAll("input")[2].value;
-    let phone = this.querySelectorAll("input")[0].value;
-    let newPassword = this.querySelectorAll("input")[1].value;
-    let confirmPassword = this.querySelectorAll("input")[2].value;
+    let phone = this.querySelectorAll("input")[3].value;
+    let newPassword = this.querySelectorAll("input")[4].value;
+    let confirmPassword = this.querySelectorAll("input")[5].value;
         <button type="submit">Daftar</button>
 
      localStorage.setItem("user", JSON.stringify({
@@ -102,30 +116,6 @@ document.getElementById("registerForm").addEventListener("submit", function(e){
     localStorage.setItem("isLoggedIn", "true");
 
     window.location.href = "index.html";
-});
-</script>
-
-    </form>
-</div>
-
-<script>
-document.getElementById("registerForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    let inputs = this.querySelectorAll("input");
-
-    let user = {
-        firstName: inputs[0].value,
-        lastName: inputs[1].value,
-        email: inputs[2].value,
-        phone: inputs[3].value,
-        password: inputs[4].value
-    };
-
-    localStorage.setItem("user", JSON.stringify(user));
-
-    alert("Pendaftaran berhasil! Silakan login.");
-    window.location.href = "login.html";
 });
 </script>
 
