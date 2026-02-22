@@ -82,13 +82,29 @@ button:hover {
     <h2>Form Pendaftaran</h2>
 
     <form id="registerForm">
-        <input type="text" placeholder="First Name" required>
-        <input type="text" placeholder="Last Name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="tel" placeholder="Phone" required>
-        <input type="password" placeholder="Create New Password" required>
-        <input type="password" placeholder="Confirm New Password" required>
+        <script>
+document.getElementById("registerForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    let firstName = this.querySelectorAll("input")[0].value;
+    let lastName = this.querySelectorAll("input")[1].value;
+    let email = this.querySelectorAll("input")[2].value;
+    let phone = this.querySelectorAll("input")[0].value;
+    let newPassword = this.querySelectorAll("input")[1].value;
+    let confirmPassword = this.querySelectorAll("input")[2].value;
         <button type="submit">Daftar</button>
+
+     localStorage.setItem("user", JSON.stringify({
+        firstName: firstName,
+        email: email,
+        password: password
+      }));
+            
+    localStorage.setItem("isLoggedIn", "true");
+
+    window.location.href = "index.html";
+});
+</script>
+
     </form>
 </div>
 
