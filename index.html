@@ -181,18 +181,42 @@ nav ul li a {
 </head>
 
 <script>
-window.onload = function(){
+    window.onload = function(){
 
     let isLoggedIn = localStorage.getItem("isLoggedIn");
     let user = JSON.parse(localStorage.getItem("user"));
 
+    let registerLink = document.getElementById("registerLink");
+    let loginLink = document.getElementById("loginLink");
+    let logoutLink = document.getElementById("logoutLink");
+    let userItem = document.getElementById("userItem");
+    let userName = document.getElementById("userName");
+
+    let welcomeText = document.getElementById("welcomeText");
+
+    let profilePic = document.querySelector(".profile-pic");
+
     if(isLoggedIn === "true" && user){
 
-        let welcome = document.getElementById("welcomeText");
-        if(welcome){
-            welcome.innerText = "WELCOME, " + user.firstName + "!";
+        welcomeText.innerText = "WELCOME, " + user.firstName + "!";
+
+        registerLink.style.display = "none";
+        loginLink.style.display = "none";
+
+        userItem.style.display = "inline";
+        logoutLink.style.display = "inline";
+
+        userName.innerText = user.firstName;
+
+        if(profilePic){
+            profilePic.style.display = "none";
         }
 
+        logoutLink.onclick = function(){
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("currentUser");
+            window.location.reload();
+        };
     }
 }
 </script>
