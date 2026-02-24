@@ -248,19 +248,21 @@ document.addEventListener("click", function(e){
         <li><a href="register.html" id="registerLink">Daftar</a></li>
         <li><a href="login.html" id="loginLink">Masuk</a></li>
         
-        <li id="userItem" style="display:none; position: relative;">
-    <a href="#" id="profileToggle">
-        <i class="fa-solid fa-user"></i> 
+   <li id="userItem" style="display:none; position:relative;">
+
+    <a href="#" id="profileToggle" style="display:flex; align-items:center; gap:6px;">
+        <i class="fa-solid fa-user"></i>
         <span id="userName"></span>
     </a>
 
-    <ul id="profileMenu" style="display:none; position:absolute; top:35px; right:0; background:#fff; padding:10px; border-radius:8px; list-style:none;">
+    <ul id="profileMenu">
         <li>
-            <a href="#" id="logoutLink" style="color:#000; text-decoration:none;">
+            <a href="#" id="logoutLink">
                 <i class="fa-solid fa-right-from-bracket"></i> Logout
             </a>
         </li>
     </ul>
+
 </li>
 
 <div class="scrapbook">
