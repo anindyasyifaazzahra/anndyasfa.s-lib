@@ -316,36 +316,3 @@ nav ul li a {
         </div>
     </div>
 </footer>
-<script>
-window.onload = function(){
-
-    let isLoggedIn = localStorage.getItem("isLoggedIn");
-    let user = JSON.parse(localStorage.getItem("user"));
-    let registerLink = document.getElementById("registerLink");
-    let loginLink = document.getElementById("loginLink");
-    let logoutLink = document.getElementById("logoutLink");
-    let userItem = document.getElementById("userItem");
-    let userName = document.getElementById("userName");
-
-    if(isLoggedIn === "true" && user){
-
-        registerLink.style.display = "none";
-        loginLink.style.display = "none";
-
-        userItem.style.display = "inline";
-        logoutLink.style.display = "inline";
-
-        userName.innerText = user.name;
-
-        logoutLink.addEventListener("click", function(){
-            localStorage.removeItem("isLoggedIn");
-            window.location.reload();
-        });
-
-    }
-}
-</script>
-
-
-
-    
