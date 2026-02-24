@@ -17,7 +17,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-body:before {
+body::before {
     content: "";
     position: fixed;
     inset: 0;
@@ -54,6 +54,26 @@ nav ul li a {
     text-decoration: none;
     color: #f5f1e8;
     font-size: 18px;
+    position: relative;
+    transition: 0.3s ease;
+}
+nav ul li a:hover {
+    color: #c8b6a6;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #c8b6a6;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 .scrapbook {
@@ -216,33 +236,46 @@ window.onload = function(){
 };
 </script>
 
+    <script>
+document.addEventListener("click", function(e){
+    const toggle = document.getElementById("profileToggle");
+    const menu = document.getElementById("profileMenu");
+
+    if(toggle && toggle.contains(e.target)){
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+    } else if(menu){
+        menu.style.display = "none";
+    }
+});
+</script>
+    
 <body>
 
 <nav>
     <h1>AS - Li</h1>
     <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Koleksi</a></li>
+        <li><a href="koleksi.html">Koleksi</a></li>
         <li><a href="#">Arsip</a></li>
         <li><a href="#">Artikel</a></li>
         <li><a href="#">Tentang</a></li>
         <li><a href="register.html" id="registerLink">Daftar</a></li>
         <li><a href="login.html" id="loginLink">Masuk</a></li>
         
-        <li id="userItem" style="display:none;">
-    <a href="#">
+        <li id="userItem" style="display:none; position: relative;">
+    <a href="#" id="profileToggle">
         <i class="fa-solid fa-user"></i> 
         <span id="userName"></span>
     </a>
-       </li>
-        
+
+    <ul id="profileMenu" style="display:none; position:absolute; top:35px; right:0; background:#fff; padding:10px; border-radius:8px; list-style:none;">
         <li>
-    <a href="#" id="logoutLink" style="display:none;" title="Logout">
-        <i class="fa-solid fa-right-from-bracket"></i>
-    </a>
+            <a href="#" id="logoutLink" style="color:#000; text-decoration:none;">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </a>
         </li>
     </ul>
-</nav>
+</li>
 
 <div class="scrapbook">
     <div class="container">
