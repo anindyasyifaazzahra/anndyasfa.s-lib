@@ -82,44 +82,35 @@ button:hover {
     <h2>Form Pendaftaran</h2>
 
     <form id="registerForm">
-        <input type="text" id="firstName" placeholder="First Name" required>
-        <input type="text" id="lastName" placeholder="Last Name" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="tel" id="phone" placeholder="Phone" required>
-        <input type="password" id="password" placeholder="New Password" required>
-        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone" required>
+        <input type="password" placeholder="Create New Password" required>
+        <input type="password" placeholder="Confirm New Password" required>
         <button type="submit">Daftar</button>
     </form>
 </div>
 
 <script>
-document.getElementById("registerForm").addEventListener("submit", function(e){
+document.getElementById("registerForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    let firstName = document.getElementById("firstName").value;
-    let lastName = document.getElementById("lastName").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-    let password = document.getElementById("password").value;
-    let confirmPassword = document.getElementById("confirmPassword").value;
+    let inputs = this.querySelectorAll("input");
 
-    if(password !== confirmPassword){
-        alert("Password tidak sama!");
-        return;
-    }
+    let user = {
+        firstName: inputs[0].value,
+        lastName: inputs[1].value,
+        email: inputs[2].value,
+        phone: inputs[3].value,
+        password: inputs[4].value
+    };
 
-    localStorage.setItem("user", JSON.stringify({
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        phone: phone,
-        password: password
-    }));
+    localStorage.setItem("user", JSON.stringify(user));
 
     alert("Pendaftaran berhasil! Silakan login.");
     window.location.href = "login.html";
 });
-
 </script>
 
 </body>
