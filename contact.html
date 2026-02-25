@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e2a38, #3e4c59);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: block;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .wa {
+            background: #25D366;
+        }
+
+        .ig {
+            background: #E1306C;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            background: #1e2a38;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3e4c59;
+        }
+
+        .success {
+            color: green;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Contact Us</h2>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/6282287589638" 
+       class="btn wa" 
+       target="_blank" 
+       rel="noopener noreferrer">
+       Chat via WhatsApp
+    </a>
+
+    <a href="https://instagram.com/anndyasfaaku" 
+       class="btn ig" 
+       target="_blank" 
+       rel="noopener noreferrer">
+       Kunjungi Instagram
+    </a>
+
+    <h3>Kritik & Saran</h3>
+
+    <form id="contactForm">
+        <input type="text" placeholder="Nama" required>
+        <textarea placeholder="Tulis pesan Anda..." required></textarea>
+        <button type="submit">Kirim</button>
+    </form>
+
+    <p class="success" id="successMsg">
+        Terima kasih atas pesan Anda 🤍
+    </p>
+</div>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+        e.preventDefault();
+        document.getElementById("successMsg").style.display = "block";
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
