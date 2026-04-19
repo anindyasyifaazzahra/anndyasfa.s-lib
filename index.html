@@ -15,7 +15,34 @@ body:before{content:"";position:fixed;inset:0;background-image:radial-gradient(r
 nav{display:flex;justify-content:space-between;align-items:center;padding:15px 8%;color:#fff;}
 nav h1{font-size:28px;} nav ul{display:flex;gap:20px;list-style:none;} nav a{color:#fff;text-decoration:none;}
 .menu-toggle{display:none;font-size:24px;cursor:pointer;}
-.scrapbook{margin:40px auto;width:90%;max-width:1100px;background:#c8b6a6;border-radius:25px;padding:30px;box-shadow:0 10px 30px rgba(0,0,0,0.3);} 
+.scrapbook{
+  margin:40px auto;
+  width:90%;
+  max-width:1100px;
+  background:#c8b6a6;
+  border-radius:25px;
+  padding:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  position:relative;
+}
+
+/* LAYER PUTIH DALAM */
+.scrapbook::before{
+  content:"";
+  position:absolute;
+  top:15px;
+  left:15px;
+  right:15px;
+  bottom:15px;
+  background:#fff;
+  border-radius:20px;
+  z-index:0;
+}
+
+.scrapbook > *{
+  position:relative;
+  z-index:1;
+} 
 .animate{opacity:0;transform:translateY(40px);transition:0.6s;} .animate.show{opacity:1;transform:translateY(0);} 
 .hero{text-align:center;margin-bottom:40px;} .hero h2{font-size:40px;color:#1e2a38;} .hero p{margin:20px auto;max-width:700px;} .hero a{display:inline-block;padding:12px 25px;background:#2f3e46;color:#fff;border-radius:25px;}
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;} .feature-card{background:#dde5d8;padding:25px;border-radius:20px;text-align:center;transition:.3s;} .feature-card:hover{transform:translateY(-5px);} 
@@ -53,44 +80,11 @@ footer{text-align:center;padding:30px 20px;color:#fff;} .profile-pic{width:150px
 <div class="scrapbook">
 <section class="hero animate">
   <h2 id="welcomeText">WELCOME TO AS-LiD</h2>
-  <p>Ruang literasi digital untuk belajar, membaca, dan menjaga budaya.</p>
+  <p>AS - LiD adalah ruang literasi digital
+                yang menghadirkan buku, arsip, dan pengetahuan.
+                Juga bisa menjadi tempat belajar, membaca, dan menjaga budaya literasi.</p>
   <a href="#koleksi">Jelajahi Koleksi</a>
 </section>
-    <section class="hero">
-            <h2 id="welcomeText">WELCOME TO AS-LiD</h2>
-            <p>
-                AS - LiD adalah ruang literasi digital
-                yang menghadirkan buku, arsip, dan pengetahuan.
-                Juga bisa menjadi tempat belajar, membaca, dan menjaga budaya literasi.
-            </p>
-            <a href="#">Jelajahi Koleksi</a>
-        </section>
-
-        <section class="features">
-            <div class="feature-card">
-                <h3>Koleksi Buku</h3>
-                <p>
-                    Beragam buku digital dan referensi akademik
-                    untuk mendukung pembelajaran dan penelitian.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <h3>Arsip Digital</h3>
-                <p>
-                    Dokumentasi dan arsip yang dikelola secara rapi
-                    untuk menjaga memori dan informasi penting.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <h3>Literasi & Budaya</h3>
-                <p>
-                    Ruang berbagi pengetahuan, budaya, dan literasi
-                    bagi generasi muda di era digital.
-                </p>
-            </div>
-        </section>
 
 <section class="features">
   <div class="feature-card animate"><h3>Koleksi Buku</h3><p>Beragam referensi digital untuk pembelajaran.</p></div>
@@ -106,6 +100,11 @@ footer{text-align:center;padding:30px 20px;color:#fff;} .profile-pic{width:150px
     <div class="book"><img src="https://via.placeholder.com/150"><p>Buku 3</p></div>
   </div>
 </section>
+
+</div>
+
+<!-- SCRAPBOOK KHUSUS EVENT -->
+<div class="scrapbook">
 
 <!-- EVENT FULL -->
 <section class="event" id="event">
@@ -213,4 +212,3 @@ document.querySelectorAll('.animate').forEach(el=>observer.observe(el));
 
 </body>
 </html>
-
