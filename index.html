@@ -136,8 +136,8 @@ footer{text-align:center;padding:30px 20px;color:#fff;} .profile-pic{width:150px
 <div id="formModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;">
   <div style="background:#fff;padding:30px;border-radius:15px;width:90%;max-width:400px;">
     <h3>Form Pendaftaran Event</h3>
-    <input type="text" placeholder="Nama" id="nama" style="width:100%;padding:10px;margin-bottom:10px;">
-    <input type="email" placeholder="Email" id="email" style="width:100%;padding:10px;margin-bottom:10px;">
+    <input type="text" placeholder="Nama" id="nama" style="width:100%;padding:10px;margin-bottom:10px;"readonly>
+    <input type="email" placeholder="Email" id="email" style="width:100%;padding:10px;margin-bottom:10px;"readonly>
     <input type="text" placeholder="Event" id="eventName" style="width:100%;padding:10px;margin-bottom:10px;" readonly>
     <button onclick="submitForm()" style="width:100%;padding:10px;background:#2f3e46;color:#fff;border:none;border-radius:10px;">Kirim</button>
     <button onclick="closeForm()" style="width:100%;padding:10px;margin-top:10px;">Tutup</button>
@@ -163,8 +163,27 @@ footer{text-align:center;padding:30px 20px;color:#fff;} .profile-pic{width:150px
 function toggleMenu(){document.getElementById('menu').classList.toggle('active');}
 
 function openForm(eventName){
+
+  let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+  // 🔒 CEK LOGIN
+  if(!isLoggedIn){
+    alert("Login untuk daftar event!");
+    window.location.href = "login.html";
+    return;
+  }
+
+  // ✅ AMBIL DATA USER
+  let user = JSON.parse(localStorage.getItem("user"));
+
   document.getElementById('formModal').style.display='flex';
   document.getElementById('eventName').value=eventName;
+
+  // ✨ AUTO ISI NAMA & EMAIL
+  if(user){
+    document.getElementById('nama').value = user.firstName;
+    document.getElementById('email').value = user.email;
+  }
 }
 function closeForm(){document.getElementById('formModal').style.display='none';}
 
@@ -172,10 +191,23 @@ function closeForm(){document.getElementById('formModal').style.display='none';}
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxVNc5tpj9Es9ZdigyxY66dYtu9kp8KnuXu18q3EByV8eAdBEUA9bCPLwjntWAH_9h_/exec';
 
 function submitForm(){
+
+  let eventName = document.getElementById('eventName').value;
+
+  // 🟢 Ambil data event yang sudah pernah didaftar
+  let registeredEvents = JSON.parse(localStorage.getItem("registeredEvents")) || [];
+
+  // 🔴 Cek apakah sudah pernah daftar event ini
+  if(registeredEvents.includes(eventName)){
+    alert("Kamu sudah terdaftar di event ini!");
+    closeForm();
+    return;
+  }
+
   let data={
     nama:document.getElementById('nama').value,
     email:document.getElementById('email').value,
-    event:document.getElementById('eventName').value
+    event:eventName
   };
 
   fetch(scriptURL,{
@@ -184,6 +216,11 @@ function submitForm(){
   })
   .then(res=>{
     alert('Data berhasil disimpan ke Google Sheets!');
+
+    // 🟢 Simpan event ke localStorage
+    registeredEvents.push(eventName);
+    localStorage.setItem("registeredEvents", JSON.stringify(registeredEvents));
+
     closeForm();
   })
   .catch(err=>alert('Error'));
