@@ -10,173 +10,28 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-
-body{
-  background: linear-gradient(135deg,#1e2a38,#3e4c59);
-  color:#333;
-}
-
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background-image:radial-gradient(rgba(255,255,255,0.15) 1px,transparent 1px);
-  background-size:20px 20px;
-  z-index:-1;
-}
-
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 8%;
-  color:#fff;
-}
-
-nav h1{font-size:28px;}
-
-nav ul{
-  display:flex;
-  gap:20px;
-  list-style:none;
-}
-
-nav a{color:#fff;text-decoration:none;}
-
+body{background: linear-gradient(135deg,#1e2a38,#3e4c59);color:#333;}
+body:before{content:"";position:fixed;inset:0;background-image:radial-gradient(rgba(255,255,255,0.15) 1px,transparent 1px);background-size:20px 20px;z-index:-1;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:15px 8%;color:#fff;}
+nav h1{font-size:28px;} nav ul{display:flex;gap:20px;list-style:none;} nav a{color:#fff;text-decoration:none;}
 .menu-toggle{display:none;font-size:24px;cursor:pointer;}
+.scrapbook{margin:40px auto;width:90%;max-width:1100px;background:#c8b6a6;border-radius:25px;padding:30px;box-shadow:0 10px 30px rgba(0,0,0,0.3);} 
+.animate{opacity:0;transform:translateY(40px);transition:0.6s;} .animate.show{opacity:1;transform:translateY(0);} 
+.hero{text-align:center;margin-bottom:40px;} .hero h2{font-size:40px;color:#1e2a38;} .hero p{margin:20px auto;max-width:700px;} .hero a{display:inline-block;padding:12px 25px;background:#2f3e46;color:#fff;border-radius:25px;}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;} .feature-card{background:#dde5d8;padding:25px;border-radius:20px;text-align:center;transition:.3s;} .feature-card:hover{transform:translateY(-5px);} 
+.koleksi{margin-top:50px;} .koleksi h2{text-align:center;margin-bottom:20px;color:#1e2a38;} .koleksi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;} 
+.book{background:#fff;padding:15px;border-radius:15px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.2);transition:.3s;} .book:hover{transform:scale(1.05);} .book img{width:100%;border-radius:10px;}
 
-.scrapbook{
-  margin:40px auto;
-  width:90%;
-  max-width:1100px;
-  background:#c8b6a6;
-  border-radius:25px;
-  padding:30px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
+/* EVENT */
+.event{margin-top:50px;} .event-card{background:#fff;padding:20px;border-radius:15px;margin:20px 0;box-shadow:0 5px 15px rgba(0,0,0,0.2);} 
+.event-card button{padding:10px 20px;background:#2f3e46;color:#fff;border:none;border-radius:10px;cursor:pointer;}
+.event-card a{display:inline-block;margin-top:10px;color:#2f3e46;text-decoration:underline;}
 
-/* ANIMASI */
-.animate{
-  opacity:0;
-  transform:translateY(40px);
-  transition:0.6s;
-}
-
-.animate.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.hero{text-align:center;margin-bottom:40px;}
-.hero h2{font-size:40px;color:#1e2a38;}
-.hero p{margin:20px auto;max-width:700px;}
-.hero a{
-  display:inline-block;
-  padding:12px 25px;
-  background:#2f3e46;
-  color:#fff;
-  border-radius:25px;
-}
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-
-.feature-card{
-  background:#dde5d8;
-  padding:25px;
-  border-radius:20px;
-  text-align:center;
-  transition:.3s;
-}
-
-.feature-card:hover{transform:translateY(-5px);}
-
-/* KOLEKSI */
-.koleksi{
-  margin-top:50px;
-}
-
-.koleksi h2{
-  text-align:center;
-  margin-bottom:20px;
-  color:#1e2a38;
-}
-
-.koleksi-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
-}
-
-.book{
-  background:#fff;
-  padding:15px;
-  border-radius:15px;
-  text-align:center;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
-  transition:.3s;
-}
-
-.book:hover{transform:scale(1.05);}
-
-.book img{
-  width:100%;
-  border-radius:10px;
-}
-
-.youtube-section{
-  display:flex;
-  justify-content:center;
-  padding:20px;
-}
-
-.youtube-section iframe{
-  width:100%;
-  max-width:700px;
-  height:350px;
-  border-radius:15px;
-}
-
-footer{
-  text-align:center;
-  padding:30px 20px;
-  color:#fff;
-}
-
-.profile-pic{
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-bottom:10px;
-}
-
-.ig-link{color:#fff;font-size:22px;margin:0 10px;}
-
-@media(max-width:768px){
-  nav ul{
-    position:absolute;
-    right:0;
-    top:60px;
-    flex-direction:column;
-    background:#1e2a38;
-    width:200px;
-    display:none;
-    padding:20px;
-  }
-
-  nav ul.active{display:flex;}
-
-  .menu-toggle{display:block;}
-
-  .hero h2{font-size:28px;}
-}
+.youtube-section{display:flex;justify-content:center;padding:20px;} .youtube-section iframe{width:100%;max-width:700px;height:350px;border-radius:15px;}
+footer{text-align:center;padding:30px 20px;color:#fff;} .profile-pic{width:150px;height:150px;border-radius:50%;object-fit:cover;margin-bottom:10px;} .ig-link{color:#fff;font-size:22px;margin:0 10px;}
+@media(max-width:768px){nav ul{position:absolute;right:0;top:60px;flex-direction:column;background:#1e2a38;width:200px;display:none;padding:20px;} nav ul.active{display:flex;} .menu-toggle{display:block;} .hero h2{font-size:28px;}}
 </style>
 </head>
-
 <body>
 
 <nav>
@@ -185,82 +40,93 @@ footer{
   <ul id="menu">
     <li><a href="#">Home</a></li>
     <li><a href="#koleksi">Koleksi</a></li>
-    <li><a href="#">Arsip</a></li>
+    <li><a href="#event">Event</a></li>
     <li><a href="#">Artikel</a></li>
     <li><a href="#">Tentang</a></li>
     <li><a href="register.html" id="registerLink">Daftar</a></li>
     <li><a href="login.html" id="loginLink">Masuk</a></li>
-
-    <li id="userItem" style="display:none;">
-      <a href="#"><i class="fa-solid fa-user"></i> <span id="userName"></span></a>
-    </li>
-
-    <li>
-      <a href="#" id="logoutLink" style="display:none;"><i class="fa-solid fa-right-from-bracket"></i></a>
-    </li>
+    <li id="userItem" style="display:none;"><a href="#"><i class="fa-solid fa-user"></i> <span id="userName"></span></a></li>
+    <li><a href="#" id="logoutLink" style="display:none;"><i class="fa-solid fa-right-from-bracket"></i></a></li>
   </ul>
 </nav>
 
 <div class="scrapbook">
-
 <section class="hero animate">
   <h2 id="welcomeText">WELCOME TO AS-LiD</h2>
   <p>Ruang literasi digital untuk belajar, membaca, dan menjaga budaya.</p>
   <a href="#koleksi">Jelajahi Koleksi</a>
 </section>
+    <section class="hero">
+            <h2 id="welcomeText">WELCOME TO AS-LiD</h2>
+            <p>
+                AS - LiD adalah ruang literasi digital
+                yang menghadirkan buku, arsip, dan pengetahuan.
+                Juga bisa menjadi tempat belajar, membaca, dan menjaga budaya literasi.
+            </p>
+            <a href="#">Jelajahi Koleksi</a>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Koleksi Buku</h3>
+                <p>
+                    Beragam buku digital dan referensi akademik
+                    untuk mendukung pembelajaran dan penelitian.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Arsip Digital</h3>
+                <p>
+                    Dokumentasi dan arsip yang dikelola secara rapi
+                    untuk menjaga memori dan informasi penting.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Literasi & Budaya</h3>
+                <p>
+                    Ruang berbagi pengetahuan, budaya, dan literasi
+                    bagi generasi muda di era digital.
+                </p>
+            </div>
+        </section>
 
 <section class="features">
-  <div class="feature-card animate">
-    <h3>Koleksi Buku</h3>
-    <p>Beragam referensi digital untuk pembelajaran.</p>
-  </div>
-
-  <div class="feature-card animate">
-    <h3>Arsip Digital</h3>
-    <p>Dokumentasi tersusun rapi dan mudah diakses.</p>
-  </div>
-
-  <div class="feature-card animate">
-    <h3>Literasi & Budaya</h3>
-    <p>Berbagi pengetahuan untuk generasi muda.</p>
-  </div>
+  <div class="feature-card animate"><h3>Koleksi Buku</h3><p>Beragam referensi digital untuk pembelajaran.</p></div>
+  <div class="feature-card animate"><h3>Arsip Digital</h3><p>Dokumentasi tersusun rapi dan mudah diakses.</p></div>
+  <div class="feature-card animate"><h3>Literasi & Budaya</h3><p>Berbagi pengetahuan untuk generasi muda.</p></div>
 </section>
 
-<!-- KOLEKSI -->
 <section class="koleksi" id="koleksi">
   <h2>Koleksi Buku</h2>
   <div class="koleksi-grid">
-    <div class="book">
-      <img src="https://via.placeholder.com/150">
-      <p>Buku 1</p>
-    </div>
-    <div class="book">
-      <img src="https://via.placeholder.com/150">
-      <p>Buku 2</p>
-    </div>
-    <div class="book">
-      <img src="https://via.placeholder.com/150">
-      <p>Buku 3</p>
-    </div>
+    <div class="book"><img src="https://via.placeholder.com/150"><p>Buku 1</p></div>
+    <div class="book"><img src="https://via.placeholder.com/150"><p>Buku 2</p></div>
+    <div class="book"><img src="https://via.placeholder.com/150"><p>Buku 3</p></div>
   </div>
 </section>
 
-<!-- EVENT SECTION -->
+<!-- EVENT FULL -->
 <section class="event" id="event">
-  <h2 style="text-align:center;margin-top:40px;color:#1e2a38;">Event AS-LiD</h2>
+  <h2 style="text-align:center;color:#1e2a38;">Event AS-LiD</h2>
 
-  <div class="event-card" style="background:#fff;padding:20px;border-radius:15px;margin:20px 0;">
+  <div class="event-card">
     <h3>Webinar Literasi Digital</h3>
     <p>Tanggal: 20 Mei 2026</p>
     <p>Belajar pentingnya literasi digital di era modern.</p>
-    <button onclick="openForm()">Daftar</button>
+    <button onclick="openForm('Webinar Literasi Digital')">Daftar</button>
+    <br>
+    <a href="event-detail.html">Lihat Detail</a>
   </div>
 
-  <div class="event-card" style="background:#fff;padding:20px;border-radius:15px;margin:20px 0;">
+  <div class="event-card">
     <h3>Workshop Arsip Digital</h3>
     <p>Tanggal: 25 Mei 2026</p>
     <p>Belajar mengelola arsip secara efektif.</p>
-    <button onclick="openForm()">Daftar</button>
+    <button onclick="openForm('Workshop Arsip Digital')">Daftar</button>
+    <br>
+    <a href="event-detail.html">Lihat Detail</a>
   </div>
 </section>
 
@@ -269,12 +135,10 @@ footer{
 <!-- FORM MODAL -->
 <div id="formModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;">
   <div style="background:#fff;padding:30px;border-radius:15px;width:90%;max-width:400px;">
-    <h3 style="margin-bottom:15px;">Form Pendaftaran Event</h3>
-
+    <h3>Form Pendaftaran Event</h3>
     <input type="text" placeholder="Nama" id="nama" style="width:100%;padding:10px;margin-bottom:10px;">
     <input type="email" placeholder="Email" id="email" style="width:100%;padding:10px;margin-bottom:10px;">
-    <input type="text" placeholder="Institusi" id="instansi" style="width:100%;padding:10px;margin-bottom:10px;">
-
+    <input type="text" placeholder="Event" id="eventName" style="width:100%;padding:10px;margin-bottom:10px;" readonly>
     <button onclick="submitForm()" style="width:100%;padding:10px;background:#2f3e46;color:#fff;border:none;border-radius:10px;">Kirim</button>
     <button onclick="closeForm()" style="width:100%;padding:10px;margin-top:10px;">Tutup</button>
   </div>
@@ -285,28 +149,47 @@ footer{
 </section>
 
 <footer>
-
-<img src="foto.jpg" alt="Foto Anindya" class="profile-pic">
-
-<div class="about-me">
-<p>About Me:</p>
-
-<div style="display:flex;gap:20px;justify-content:center;">
+<img src="foto.jpg" class="profile-pic">
+<p>About Me</p>
+<div>
   <a href="https://www.instagram.com/anndyasfa" target="_blank" class="ig-link"><i class="fa-brands fa-instagram"></i></a>
   <a href="https://anindyasyifaazzahra.github.io/CV.ANINDYA/" target="_blank" class="ig-link"><i class="fa-solid fa-file"></i></a>
 </div>
-</div>
-
 <p>&copy; 2026 AS-LiD</p>
 <a href="contact.html">Contact Us</a>
 </footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById('menu').classList.toggle('active');
+function toggleMenu(){document.getElementById('menu').classList.toggle('active');}
+
+function openForm(eventName){
+  document.getElementById('formModal').style.display='flex';
+  document.getElementById('eventName').value=eventName;
+}
+function closeForm(){document.getElementById('formModal').style.display='none';}
+
+// GANTI URL DI BAWAH DENGAN GOOGLE APPS SCRIPT
+const scriptURL = 'PASTE_URL_WEB_APP_DISINI';
+
+function submitForm(){
+  let data={
+    nama:document.getElementById('nama').value,
+    email:document.getElementById('email').value,
+    event:document.getElementById('eventName').value
+  };
+
+  fetch(scriptURL,{
+    method:'POST',
+    body:JSON.stringify(data)
+  })
+  .then(res=>{
+    alert('Data berhasil disimpan ke Google Sheets!');
+    closeForm();
+  })
+  .catch(err=>alert('Error'));
 }
 
-// LOGIN
+// LOGIN + ANIMASI
 window.onload=function(){
 let isLoggedIn=localStorage.getItem("isLoggedIn")==="true";
 let user=JSON.parse(localStorage.getItem("user"));
@@ -318,49 +201,16 @@ if(isLoggedIn && user){
   document.getElementById("userItem").style.display="inline-block";
   document.getElementById("logoutLink").style.display="inline-block";
   document.getElementById("userName").innerText=user.firstName;
-
-  document.getElementById("logoutLink").onclick=function(){
-    localStorage.clear();
-    location.reload();
-  }
+  document.getElementById("logoutLink").onclick=function(){localStorage.clear();location.reload();}
 }
 
-// SCROLL ANIMATION
 const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');}});
 });
-
 document.querySelectorAll('.animate').forEach(el=>observer.observe(el));
 }
-
-// EVENT FORM
-function openForm(){
-  document.getElementById('formModal').style.display='flex';
-}
-
-function closeForm(){
-  document.getElementById('formModal').style.display='none';
-}
-
-function submitForm(){
-  let nama=document.getElementById('nama').value;
-  let email=document.getElementById('email').value;
-
-  if(nama=="" || email==""){
-    alert("Isi data dulu!");
-    return;
-  }
-
-  alert("Pendaftaran berhasil!
-Terima kasih, "+nama);
-  closeForm();
-}
-
 </script>
 
 </body>
 </html>
+
