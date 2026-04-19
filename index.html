@@ -66,10 +66,9 @@ nav ul li a {
 }
 
 .container {
-    background: #f5f1e8;
-    padding: 40px;
-    border-radius: 26px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .hero {
@@ -177,6 +176,31 @@ footer {
 .ig-link:hover {
     color: #c8b6a6;
     transform: scale(1.2);
+}
+    .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.col {
+  flex: 1 1 300px;
+}
+    @media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}
+    .card {
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 </style>
 
