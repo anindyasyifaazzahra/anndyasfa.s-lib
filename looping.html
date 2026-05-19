@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AS-LiD | Looping PHP</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background: linear-gradient(135deg,#1e2a38,#3e4c59);
+  min-height:100vh;
+  padding:40px 20px;
+}
+
+/* HEADER */
+.header{
+  width:100%;
+  background:#2f3e46;
+  padding:25px 8%;
+  border-radius:20px;
+  margin-bottom:40px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.header h1{
+  color:#fff;
+  font-size:38px;
+}
+
+/* CARD */
+.container{
+  max-width:1100px;
+  margin:auto;
+
+  background:#fff;
+  border-radius:30px;
+
+  padding:50px;
+
+  box-shadow:0 15px 35px rgba(0,0,0,0.3);
+}
+
+/* TITLE */
+.container h2{
+  color:#1e2a38;
+  margin-bottom:30px;
+  font-size:40px;
+}
+
+/* BUTTON */
+.back-btn{
+  display:inline-block;
+
+  background:#c8b6a6;
+  color:#1e2a38;
+
+  padding:14px 28px;
+
+  border-radius:50px;
+
+  text-decoration:none;
+  font-weight:600;
+
+  margin-bottom:35px;
+
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  background:#2f3e46;
+  color:#fff;
+  transform:translateY(-3px);
+}
+
+/* LIST LOOPING */
+.loop-item{
+  padding:18px 0;
+  border-bottom:1px solid #ddd;
+
+  font-size:20px;
+
+  color:#333;
+
+  transition:0.3s;
+}
+
+.loop-item:hover{
+  padding-left:10px;
+  color:#2f3e46;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  .container{
+    padding:30px 20px;
+  }
+
+  .container h2{
+    font-size:28px;
+  }
+
+  .header h1{
+    font-size:28px;
+  }
+
+  .loop-item{
+    font-size:16px;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>AS-LiD</h1>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <h2>Belajar PHP - Looping 1000 Hari</h2>
+
+  <a href="index.html" class="back-btn">
+    Back to Home
+  </a>
+
+  <div id="loopContainer"></div>
+
+<script>
+
+for(let i = 1; i <= 1000; i++){
+
+  document.getElementById("loopContainer").innerHTML += `
+  
+    <div class="loop-item">
+      Ini adalah hari ke-${i} belajar PHP
+    </div>
+
+  `;
+
+}
+
+</script>
+
+</div>
+
+</body>
+</html>
