@@ -934,27 +934,26 @@ function openForm(eventName){
 
   let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
-  
   if(!isLoggedIn){
     alert("Login untuk daftar event!");
     window.location.href = "login.html";
     return;
   }
 
-  
   let user = JSON.parse(localStorage.getItem("user"));
 
   document.getElementById('formModal').style.display='flex';
   document.getElementById('eventName').value=eventName;
 
- 
   if(user){
     document.getElementById('nama').value = user.firstName;
     document.getElementById('email').value = user.email;
   }
 }
-function closeForm(){document.getElementById('formModal').style.display='none';}
 
+function closeForm(){
+  document.getElementById('formModal').style.display='none';
+}
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxVNc5tpj9Es9ZdigyxY66dYtu9kp8KnuXu18q3EByV8eAdBEUA9bCPLwjntWAH_9h_/exec';
 
@@ -962,10 +961,8 @@ function submitForm(){
 
   let eventName = document.getElementById('eventName').value;
 
-
   let registeredEvents = JSON.parse(localStorage.getItem("registeredEvents")) || [];
 
- 
   if(registeredEvents.includes(eventName)){
     alert("Kamu sudah terdaftar di event ini!");
     closeForm();
@@ -983,42 +980,77 @@ function submitForm(){
     body:JSON.stringify(data)
   })
   .then(res=>{
+
     alert('Data berhasil disimpan ke Google Sheets!');
 
-   
     registeredEvents.push(eventName);
-    localStorage.setItem("registeredEvents", JSON.stringify(registeredEvents));
+
+    localStorage.setItem(
+      "registeredEvents",
+      JSON.stringify(registeredEvents)
+    );
 
     closeForm();
+
   })
   .catch(err=>alert('Error'));
 }
 
-
 window.onload=function(){
-let isLoggedIn=localStorage.getItem("isLoggedIn")==="true";
-let user=JSON.parse(localStorage.getItem("user"));
 
-if(isLoggedIn && user){
-  document.getElementById("welcomeText").innerText="WELCOME, "+user.firstName+"!";
-  document.getElementById("registerLink").style.display="none";
-  document.getElementById("loginLink").style.display="none";
-  document.getElementById("userItem").style.display="inline-block";
-  document.getElementById("logoutLink").style.display="inline-block";
-  document.getElementById("userName").innerText=user.firstName;
-  document.getElementById("logoutLink").onclick=function(){
+  let isLoggedIn =
+    localStorage.getItem("isLoggedIn")==="true";
 
-  // Hapus hanya login
-  localStorage.removeItem("isLoggedIn");
-  localStorage.removeItem("user");
+  let user =
+    JSON.parse(localStorage.getItem("user"));
 
-  location.reload();
-}
+  if(isLoggedIn && user){
 
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');}});
-});
-document.querySelectorAll('.animate').forEach(el=>observer.observe(el));
+    document.getElementById("welcomeText").innerText =
+      "WELCOME, "+user.firstName+"!";
+
+    document.getElementById("registerLink").style.display="none";
+
+    document.getElementById("loginLink").style.display="none";
+
+    document.getElementById("userItem").style.display="inline-block";
+
+    document.getElementById("logoutLink").style.display="inline-block";
+
+    document.getElementById("userName").innerText =
+      user.firstName;
+
+    document.getElementById("logoutLink").onclick=function(){
+
+      // logout tanpa hapus anggota
+      localStorage.removeItem("isLoggedIn");
+
+      localStorage.removeItem("user");
+
+      location.reload();
+    }
+
+  }
+
+  // ANIMASI
+  const observer = new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add('show');
+
+      }
+
+    });
+
+  });
+
+  document.querySelectorAll('.animate').forEach(el=>
+    observer.observe(el)
+  );
+
 }
 </script>
 
