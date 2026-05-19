@@ -1,75 +1,284 @@
+```html id="ftnsgy"
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daftar - AS-Li</title>
+
+<title>Daftar - AS-LiD</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1e2a38, #3e4c59);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
-.form-container {
-    background: #f5f1e8;
-    padding: 40px;
-    border-radius: 20px;
-    width: 700px;
-    position: relative;
+body{
+
+  background:
+  linear-gradient(rgba(30,42,56,0.75), rgba(62,76,89,0.75)),
+  url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600');
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+
+  min-height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:20px;
 }
 
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 22px;
-    cursor: pointer;
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
+/* FORM CONTAINER */
+.form-container{
+
+  width:100%;
+  max-width:750px;
+
+  background:rgba(255,255,255,0.96);
+
+  backdrop-filter:blur(10px);
+
+  padding:50px 40px;
+
+  border-radius:35px;
+
+  position:relative;
+
+  box-shadow:
+  0 15px 35px rgba(0,0,0,0.35);
+
+  animation:fadeIn 0.6s ease;
 }
 
-.close-btn:hover {
-    color: #1e2a38;
-    transform: scale(1.2);
-    transition: 0.2s ease;
-}
-h2 {
-    text-align: center;
+/* CLOSE BUTTON */
+.close-btn{
+
+  position:absolute;
+
+  top:20px;
+  right:22px;
+
+  width:40px;
+  height:40px;
+
+  border-radius:50%;
+
+  background:#f2f2f2;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-decoration:none;
+
+  color:#1e2a38;
+
+  transition:0.3s;
 }
 
-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+.close-btn:hover{
+
+  background:#2f3e46;
+
+  color:#fff;
+
+  transform:rotate(90deg);
 }
 
-input {
-    flex: 1 1 45%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+/* TITLE */
+.form-container h2{
+
+  text-align:center;
+
+  color:#1e2a38;
+
+  font-size:36px;
+
+  margin-bottom:10px;
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    background: #2f3e46;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 15px;
+.form-container p{
+
+  text-align:center;
+
+  color:#666;
+
+  margin-bottom:35px;
+
+  font-size:15px;
 }
 
-button:hover {
-    background: #1e2a38;
+/* FORM */
+form{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:20px;
 }
+
+/* INPUT GROUP */
+.input-group{
+
+  position:relative;
+}
+
+.input-group.full{
+  grid-column:1/3;
+}
+
+.input-group i{
+
+  position:absolute;
+
+  left:18px;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  color:#777;
+}
+
+/* INPUT */
+.input-group input{
+
+  width:100%;
+
+  padding:15px 15px 15px 50px;
+
+  border:none;
+  outline:none;
+
+  border-radius:18px;
+
+  background:#f3f4f6;
+
+  font-size:15px;
+
+  transition:0.3s;
+}
+
+.input-group input:focus{
+
+  background:#fff;
+
+  box-shadow:
+  0 0 0 3px rgba(47,62,70,0.15);
+}
+
+/* BUTTON */
+button{
+
+  grid-column:1/3;
+
+  width:100%;
+
+  padding:16px;
+
+  border:none;
+
+  border-radius:20px;
+
+  background:#2f3e46;
+
+  color:#fff;
+
+  font-size:16px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+  margin-top:10px;
+}
+
+button:hover{
+
+  background:#c8b6a6;
+
+  color:#1e2a38;
+
+  transform:translateY(-3px);
+}
+
+/* LOGIN LINK */
+.login-link{
+
+  margin-top:25px;
+
+  text-align:center;
+
+  color:#555;
+
+  font-size:14px;
+}
+
+.login-link a{
+
+  color:#2f3e46;
+
+  text-decoration:none;
+
+  font-weight:600;
+}
+
+.login-link a:hover{
+  color:#c8b6a6;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .form-container{
+
+    padding:40px 25px;
+  }
+
+  form{
+
+    grid-template-columns:1fr;
+  }
+
+  .input-group.full,
+  button{
+
+    grid-column:auto;
+  }
+
+  .form-container h2{
+
+    font-size:28px;
+  }
+
+}
+
 </style>
 </head>
 
@@ -77,41 +286,168 @@ button:hover {
 
 <div class="form-container">
 
-    <a href="index.html" class="close-btn">✕</a>
+  <a href="index.html" class="close-btn">
+    <i class="fa-solid fa-xmark"></i>
+  </a>
 
-    <h2>Form Pendaftaran</h2>
+  <h2>Daftar Akun</h2>
 
-    <form id="registerForm">
-        <input type="text" placeholder="First Name" required>
-        <input type="text" placeholder="Last Name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="tel" placeholder="Phone" required>
-        <input type="password" placeholder="Create New Password" required>
-        <input type="password" placeholder="Confirm New Password" required>
-        <button type="submit">Daftar</button>
-    </form>
+  <p>
+    Bergabung dengan AS-LiD dan nikmati layanan literasi digital modern
+  </p>
+
+  <form id="registerForm">
+
+    <!-- FIRST NAME -->
+    <div class="input-group">
+
+      <i class="fa-solid fa-user"></i>
+
+      <input
+        type="text"
+        placeholder="First Name"
+        required
+      >
+
+    </div>
+
+    <!-- LAST NAME -->
+    <div class="input-group">
+
+      <i class="fa-solid fa-user"></i>
+
+      <input
+        type="text"
+        placeholder="Last Name"
+        required
+      >
+
+    </div>
+
+    <!-- EMAIL -->
+    <div class="input-group full">
+
+      <i class="fa-solid fa-envelope"></i>
+
+      <input
+        type="email"
+        placeholder="Email"
+        required
+      >
+
+    </div>
+
+    <!-- PHONE -->
+    <div class="input-group">
+
+      <i class="fa-solid fa-phone"></i>
+
+      <input
+        type="tel"
+        placeholder="Phone Number"
+        required
+      >
+
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="input-group">
+
+      <i class="fa-solid fa-lock"></i>
+
+      <input
+        type="password"
+        placeholder="Create Password"
+        required
+      >
+
+    </div>
+
+    <!-- CONFIRM PASSWORD -->
+    <div class="input-group full">
+
+      <i class="fa-solid fa-key"></i>
+
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        required
+      >
+
+    </div>
+
+    <button type="submit">
+
+      <i class="fa-solid fa-user-plus"></i>
+      Daftar Sekarang
+
+    </button>
+
+  </form>
+
+  <div class="login-link">
+
+    Sudah punya akun?
+    <a href="login.html">
+      Login di sini
+    </a>
+
+  </div>
+
 </div>
 
 <script>
-document.getElementById("registerForm").addEventListener("submit", function(e) {
-    e.preventDefault();
 
-    let inputs = this.querySelectorAll("input");
+document
+.getElementById("registerForm")
+.addEventListener("submit", function(e){
 
-    let user = {
-        firstName: inputs[0].value,
-        lastName: inputs[1].value,
-        email: inputs[2].value,
-        phone: inputs[3].value,
-        password: inputs[4].value
-    };
+  e.preventDefault();
 
-    localStorage.setItem("user", JSON.stringify(user));
+  let inputs =
+    this.querySelectorAll("input");
 
-    alert("Pendaftaran berhasil! Silakan login.");
-    window.location.href = "login.html";
+  let password =
+    inputs[4].value;
+
+  let confirmPassword =
+    inputs[5].value;
+
+  if(password !== confirmPassword){
+
+    alert("Konfirmasi password tidak cocok!");
+    return;
+  }
+
+  let user = {
+
+    firstName: inputs[0].value,
+
+    lastName: inputs[1].value,
+
+    email: inputs[2].value,
+
+    phone: inputs[3].value,
+
+    password: password
+
+  };
+
+  localStorage.setItem(
+    "user",
+    JSON.stringify(user)
+  );
+
+  alert(
+    "Pendaftaran berhasil! Silakan login."
+  );
+
+  window.location.href = "login.html";
+
 });
+
 </script>
 
 </body>
 </html>
+```
