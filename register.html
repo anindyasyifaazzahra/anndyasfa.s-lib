@@ -398,53 +398,59 @@ button:hover{
 
 <script>
 
-document
-.getElementById("registerForm")
+```javascript
+document.getElementById("registerForm")
 .addEventListener("submit", function(e){
 
   e.preventDefault();
 
-  let inputs =
-    this.querySelectorAll("input");
+  let firstName =
+    document.getElementById("firstName").value;
+
+  let lastName =
+    document.getElementById("lastName").value;
+
+  let email =
+    document.getElementById("email").value;
 
   let password =
-    inputs[4].value;
+    document.getElementById("password").value;
 
-  let confirmPassword =
-    inputs[5].value;
+  // ambil semua user
+  let users =
+    JSON.parse(localStorage.getItem("users")) || [];
 
-  if(password !== confirmPassword){
+  // cek email sudah ada atau belum
+  let existingUser =
+    users.find(user => user.email === email);
 
-    alert("Konfirmasi password tidak cocok!");
+  if(existingUser){
+    alert("Email sudah terdaftar!");
     return;
   }
 
-  let user = {
-
-    firstName: inputs[0].value,
-
-    lastName: inputs[1].value,
-
-    email: inputs[2].value,
-
-    phone: inputs[3].value,
-
-    password: password
-
+  // buat data user baru
+  let newUser = {
+    firstName,
+    lastName,
+    email,
+    password
   };
 
+  // simpan ke array users
+  users.push(newUser);
+
   localStorage.setItem(
-    "user",
-    JSON.stringify(user)
+    "users",
+    JSON.stringify(users)
   );
 
-  alert(
-    "Pendaftaran berhasil! Silakan login."
-  );
+  alert("Pendaftaran berhasil!");
 
   window.location.href = "login.html";
 
 });
+
 
 </script>
 
