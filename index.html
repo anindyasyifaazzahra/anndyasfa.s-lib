@@ -1006,7 +1006,13 @@ if(isLoggedIn && user){
   document.getElementById("userItem").style.display="inline-block";
   document.getElementById("logoutLink").style.display="inline-block";
   document.getElementById("userName").innerText=user.firstName;
-  document.getElementById("logoutLink").onclick=function(){localStorage.clear();location.reload();}
+  document.getElementById("logoutLink").onclick=function(){
+
+  // Hapus hanya login
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("user");
+
+  location.reload();
 }
 
 const observer=new IntersectionObserver(entries=>{
