@@ -1,194 +1,511 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Contact Us - AS-Li</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - AS-LiD</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #1e2a38, #3e4c59);
-    font-family: 'Poppins', sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
-body:before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
-    background-size: 20px 20px;
-    z-index: -1;
+/* BACKGROUND SAMA SEPERTI INDEX */
+body{
+  background:
+  linear-gradient(rgba(30,42,56,0.7), rgba(62,76,89,0.7)),
+  url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600');
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+
+  color:#333;
 }
 
-nav {
-    padding: 15px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  position:sticky;
+  top:0;
+
+  width:100%;
+
+  padding:18px 8%;
+
+  background:rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid rgba(255,255,255,0.15);
+
+  box-shadow:0 4px 20px rgba(0,0,0,0.2);
+
+  z-index:9999;
 }
 
-nav h1 {
-    font-size: 32px;
-    color: #f5f1e8;
-    letter-spacing: 2px;
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    padding: 0;
-    margin: 0;
+.logo{
+  width:65px;
+  height:65px;
+  object-fit:contain;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #f5f1e8;
-    font-size: 18px;
+nav h1{
+  font-size:30px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:#fff;
 }
 
-.scrapbook {
-    margin: 40px auto;
-    max-width: 900px;
-    padding: 20px;
-    background: #c8b6a6;
-    border-radius: 32px;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+nav ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
 }
 
-.container {
-    background: #f5f1e8;
-    padding: 40px;
-    border-radius: 26px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:500;
+  transition:0.3s;
 }
 
-.hero {
-    text-align: center;
-    margin-bottom: 40px;
+nav ul li a:hover{
+  color:#c8b6a6;
 }
 
-.hero h2 {
-    font-size: 42px;
-    font-weight: 600;
-    color: #1e2a38;
+/* CONTAINER */
+.scrapbook{
+  margin:40px auto;
+  width:90%;
+  max-width:1000px;
+
+  background:#c8b6a6;
+
+  border-radius:25px;
+
+  padding:30px;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-.hero p {
-    font-size: 18px;
-    color: #444;
-    margin-top: 15px;
+.container{
+  background:#fff;
+
+  border-radius:20px;
+
+  padding:50px;
 }
 
-/* ===== TAMBAHAN KHUSUS CONTACT ===== */
-
-.contact-links {
-    text-align: center;
-    margin-bottom: 30px;
+/* HERO */
+.hero{
+  text-align:center;
+  margin-bottom:40px;
 }
 
-.contact-links a {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 25px;
-    background: #2f3e46;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: 0.3s ease;
+.hero h2{
+  font-size:42px;
+  color:#1e2a38;
+  margin-bottom:15px;
 }
 
-.contact-links a:hover {
-    background: #1e2a38;
-    transform: scale(1.05);
+.hero p{
+  color:#555;
+  line-height:1.8;
 }
 
-form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+/* CONTACT BUTTON */
+.contact-links{
+  text-align:center;
+  margin-bottom:40px;
 }
 
-input, textarea {
-    padding: 12px;
-    border-radius: 15px;
-    border: none;
-    font-family: 'Poppins', sans-serif;
-    box-shadow: inset 0 3px 8px rgba(0,0,0,0.1);
+.contact-links a{
+  display:inline-block;
+
+  margin:10px;
+
+  padding:14px 28px;
+
+  background:#2f3e46;
+
+  color:#fff;
+
+  text-decoration:none;
+
+  border-radius:50px;
+
+  font-weight:600;
+
+  transition:0.3s;
 }
 
-textarea {
-    resize: none;
+.contact-links a:hover{
+  background:#c8b6a6;
+  color:#1e2a38;
+  transform:translateY(-3px);
 }
 
-button {
-    padding: 12px;
-    border: none;
-    border-radius: 25px;
-    background: #2f3e46;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    transition: 0.3s ease;
+/* FORM */
+.form-title{
+  text-align:center;
+  color:#1e2a38;
+  margin-bottom:25px;
 }
 
-button:hover {
-    background: #1e2a38;
-    transform: scale(1.05);
+form{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
 }
 
-footer {
-    text-align: center;
-    padding: 30px 20px;
-    color: #f5f1e8;
-    font-size: 14px;
+input,
+textarea{
+  padding:15px;
+
+  border:none;
+
+  border-radius:15px;
+
+  background:#f4f4f4;
+
+  font-size:15px;
+
+  outline:none;
+}
+
+textarea{
+  resize:none;
+}
+
+button{
+  padding:14px;
+
+  border:none;
+
+  border-radius:50px;
+
+  background:#2f3e46;
+
+  color:#fff;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+button:hover{
+  background:#c8b6a6;
+  color:#1e2a38;
+}
+
+/* FOOTER */
+footer{
+
+  margin-top:60px;
+
+  background:rgba(15,23,30,0.92);
+
+  backdrop-filter:blur(12px);
+
+  padding:60px 8% 20px;
+
+  color:#fff;
+
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.footer-container{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+
+  gap:40px;
+
+  margin-bottom:40px;
+}
+
+.footer-box h3{
+
+  margin-bottom:20px;
+
+  color:#c8b6a6;
+
+  font-size:22px;
+}
+
+.footer-box h4{
+
+  margin-top:10px;
+
+  margin-bottom:10px;
+}
+
+.footer-box p{
+
+  line-height:1.8;
+
+  color:#ddd;
+
+  font-size:14px;
+}
+
+.profile-pic{
+
+  width:110px;
+
+  height:110px;
+
+  border-radius:50%;
+
+  object-fit:cover;
+
+  border:4px solid rgba(255,255,255,0.15);
+
+  margin-bottom:15px;
+}
+
+.footer-social{
+  margin-top:20px;
+}
+
+.ig-link{
+
+  display:inline-flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  width:42px;
+
+  height:42px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.08);
+
+  color:#fff;
+
+  margin-right:10px;
+
+  text-decoration:none;
+
+  transition:0.3s;
+}
+
+.ig-link:hover{
+
+  background:#c8b6a6;
+
+  color:#1e2a38;
+
+  transform:translateY(-4px);
+}
+
+.footer-bottom{
+
+  text-align:center;
+
+  padding-top:20px;
+
+  border-top:1px solid rgba(255,255,255,0.1);
+
+  font-size:14px;
+
+  color:#bbb;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  nav{
+    padding:18px 5%;
+  }
+
+  nav h1{
+    font-size:24px;
+  }
+
+  .logo{
+    width:55px;
+    height:55px;
+  }
+
+  .container{
+    padding:30px 20px;
+  }
+
+  .hero h2{
+    font-size:32px;
+  }
+
 }
 
 </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav>
-    <h1>AS-Li</h1>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-    </ul>
-</nav>
 
-<div class="scrapbook">
-    <div class="container">
-
-        <div class="hero">
-            <h2>Contact Us</h2>
-            <p>Kami siap menerima kritik, saran, dan masukan dari Anda untuk pengembangan perpustakaan digital ini.</p>
-        </div>
-
-        <div class="contact-links">
-            <a href="https://wa.me/6282287589638" target="_blank">WhatsApp</a>
-            <a href="https://instagram.com/anndysfa" target="_blank">Instagram</a>
-        </div>
-
-        <h3 style="text-align:center; color:#1e2a38;">Form Kritik & Saran</h3>
-
-        <form action="#" method="post">
-            <input type="text" name="nama" placeholder="Nama Anda" required>
-            <input type="email" name="email" placeholder="Email Anda" required>
-            <textarea name="pesan" rows="5" placeholder="Tulis kritik dan saran Anda..." required></textarea>
-            <button type="submit">Kirim Pesan</button>
-        </form>
-
-    </div>
+<div class="logo-area">
+  <img src="logo.png" alt="AS-LiD Logo" class="logo">
+  <h1>AS - LiD</h1>
 </div>
 
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="koleksi.html">Koleksi</a></li>
+  <li><a href="event.html">Event</a></li>
+</ul>
+
+</nav>
+
+<!-- CONTENT -->
+<div class="scrapbook">
+
+<div class="container">
+
+<div class="hero">
+
+  <h2>Contact Us</h2>
+
+  <p>
+    Kami siap menerima kritik, saran, maupun masukan
+    untuk pengembangan perpustakaan digital AS-LiD.
+  </p>
+
+</div>
+
+<div class="contact-links">
+
+  <a href="https://wa.me/6282287589638" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+    WhatsApp
+  </a>
+
+  <a href="https://instagram.com/anndysfa" target="_blank">
+    <i class="fa-brands fa-instagram"></i>
+    Instagram
+  </a>
+
+</div>
+
+<h3 class="form-title">
+  Form Kritik & Saran
+</h3>
+
+<form>
+
+  <input type="text" placeholder="Nama Anda" required>
+
+  <input type="email" placeholder="Email Anda" required>
+
+  <textarea rows="6" placeholder="Tulis pesan Anda..." required></textarea>
+
+  <button type="submit">
+    Kirim Pesan
+  </button>
+
+</form>
+
+</div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-    © 2026 AS-Li | Contact Page
+
+<div class="footer-container">
+
+  <!-- KOLOM 1 -->
+  <div class="footer-box">
+
+    <h3>Developer Profile</h3>
+
+    <img src="foto.jpg" class="profile-pic">
+
+    <h4>Anindya Syifa Azzahra</h4>
+
+    <p>
+      Mahasiswa S-1 Perpustakaan dan Sains Informasi
+    </p>
+
+  </div>
+
+  <!-- KOLOM 2 -->
+  <div class="footer-box">
+
+    <h3>AS-LiD</h3>
+
+    <p>
+      AS-LiD adalah ruang literasi digital
+      yang menghadirkan buku, arsip,
+      dan pengetahuan untuk mendukung
+      budaya membaca dan pembelajaran modern.
+    </p>
+
+  </div>
+
+  <!-- KOLOM 3 -->
+  <div class="footer-box">
+
+    <h3>Kontak</h3>
+
+    <p>📍 Medan, Sumatera Utara</p>
+
+    <p>📧 aslidlibrary@gmail.com</p>
+
+    <p>📞 +62 812-3456-7890</p>
+
+    <div class="footer-social">
+
+      <a href="#" class="ig-link">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a href="#" class="ig-link">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+
+      <a href="#" class="ig-link">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footer-bottom">
+  &copy; 2026 AS-LiD | Access Sphere – Literature Digital
+</div>
+
 </footer>
 
 </body>
 </html>
+```
