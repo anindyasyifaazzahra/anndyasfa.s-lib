@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Event AS-LiD</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+
+  background:
+  linear-gradient(rgba(30,42,56,0.7), rgba(62,76,89,0.7)),
+  url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600');
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+
+  color:#fff;
+}
+
+/* NAVBAR */
+nav{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:18px 8%;
+
+  background:rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(12px);
+
+  position:sticky;
+  top:0;
+
+  z-index:999;
+}
+
+nav h1{
+  font-size:28px;
+}
+
+nav ul{
+
+  display:flex;
+  gap:20px;
+
+  list-style:none;
+}
+
+nav a{
+
+  color:#fff;
+
+  text-decoration:none;
+
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#c8b6a6;
+}
+
+/* HERO */
+.hero{
+
+  text-align:center;
+
+  padding:100px 20px 70px;
+}
+
+.hero h2{
+
+  font-size:48px;
+
+  margin-bottom:20px;
+}
+
+.hero p{
+
+  max-width:800px;
+
+  margin:auto;
+
+  line-height:1.8;
+
+  color:#ddd;
+}
+
+/* CONTAINER */
+.container{
+
+  width:90%;
+
+  max-width:1200px;
+
+  margin:auto;
+}
+
+/* GRID */
+.event-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(280px,1fr));
+
+  gap:30px;
+
+  margin-bottom:50px;
+}
+
+/* CARD */
+.event-card{
+
+  background:#fff;
+
+  color:#333;
+
+  border-radius:25px;
+
+  overflow:hidden;
+
+  transition:0.4s;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.event-card:hover{
+
+  transform:translateY(-8px);
+}
+
+.event-card img{
+
+  width:100%;
+
+  height:200px;
+
+  object-fit:cover;
+}
+
+/* CONTENT */
+.event-content{
+
+  padding:25px;
+}
+
+.event-category{
+
+  display:inline-block;
+
+  background:#dde5d8;
+
+  color:#1e2a38;
+
+  padding:6px 15px;
+
+  border-radius:50px;
+
+  font-size:13px;
+
+  margin-bottom:15px;
+}
+
+.event-content h3{
+
+  color:#1e2a38;
+
+  margin-bottom:10px;
+}
+
+.event-date{
+
+  color:#777;
+
+  margin-bottom:15px;
+}
+
+.event-content p{
+
+  line-height:1.7;
+
+  margin-bottom:20px;
+}
+
+/* BUTTON */
+.event-btn{
+
+  display:inline-block;
+
+  padding:12px 20px;
+
+  background:#2f3e46;
+
+  color:#fff;
+
+  text-decoration:none;
+
+  border-radius:50px;
+
+  transition:0.3s;
+}
+
+.event-btn:hover{
+
+  background:#c8b6a6;
+
+  color:#1e2a38;
+}
+
+/* FOOTER */
+footer{
+
+  margin-top:60px;
+
+  background:rgba(15,23,30,0.92);
+
+  padding:30px;
+
+  text-align:center;
+}
+
+@media(max-width:768px){
+
+  .hero h2{
+    font-size:36px;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+
+  <h1>AS-LiD</h1>
+
+  <ul>
+
+    <li><a href="index.html">Home</a></li>
+
+    <li><a href="koleksi.html">Koleksi</a></li>
+
+    <li><a href="event.html">Event</a></li>
+
+  </ul>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <h2>Event & Webinar AS-LiD</h2>
+
+  <p>
+    Ikuti berbagai webinar,
+    workshop,
+    dan kegiatan literasi digital
+    bersama AS-LiD untuk meningkatkan
+    pengetahuan dan keterampilan di era modern.
+  </p>
+
+</section>
+
+<div class="container">
+
+  <div class="event-grid">
+
+    <!-- EVENT 1 -->
+    <div class="event-card">
+
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200">
+
+      <div class="event-content">
+
+        <div class="event-category">
+          Webinar
+        </div>
+
+        <h3>Webinar Literasi Digital</h3>
+
+        <div class="event-date">
+          📅 20 Mei 2026
+        </div>
+
+        <p>
+          Belajar memahami literasi digital,
+          keamanan informasi,
+          dan budaya digital modern.
+        </p>
+
+        <a href="#" class="event-btn">
+          Detail Event
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- EVENT 2 -->
+    <div class="event-card">
+
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200">
+
+      <div class="event-content">
+
+        <div class="event-category">
+          Workshop
+        </div>
+
+        <h3>Workshop Arsip Digital</h3>
+
+        <div class="event-date">
+          📅 25 Mei 2026
+        </div>
+
+        <p>
+          Workshop pengelolaan arsip digital
+          secara modern dan efisien.
+        </p>
+
+        <a href="#" class="event-btn">
+          Detail Event
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- EVENT 3 -->
+    <div class="event-card">
+
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200">
+
+      <div class="event-content">
+
+        <div class="event-category">
+          Seminar
+        </div>
+
+        <h3>Seminar Budaya Literasi</h3>
+
+        <div class="event-date">
+          📅 1 Juni 2026
+        </div>
+
+        <p>
+          Diskusi tentang pentingnya budaya membaca
+          bagi generasi muda Indonesia.
+        </p>
+
+        <a href="#" class="event-btn">
+          Detail Event
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+
+  &copy; 2026 AS-LiD | Digital Library Website
+
+</footer>
+
+</body>
+</html>
