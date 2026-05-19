@@ -107,8 +107,95 @@ nav a{color:#fff;text-decoration:none;}
 .hero{text-align:center;margin-bottom:40px;} .hero h2{font-size:40px;color:#1e2a38;} .hero p{margin:20px auto;max-width:700px;} .hero a{display:inline-block;padding:12px 25px;background:#2f3e46;color:#fff;border-radius:25px;}
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;} .feature-card{background:#dde5d8;padding:25px;border-radius:20px;text-align:center;transition:.3s;} .feature-card:hover{transform:translateY(-5px);} 
 .koleksi{margin-top:50px;} .koleksi h2{text-align:center;margin-bottom:20px;color:#1e2a38;} .koleksi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;} 
-.book{background:#fff;padding:15px;border-radius:15px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.2);transition:.3s;} .book:hover{transform:scale(1.05);} .book img{width:100%;border-radius:10px;}
+.book{
 
+  background:#fff;
+
+  padding:18px;
+
+  border-radius:20px;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+
+  transition:0.4s;
+
+  overflow:hidden;
+
+  position:relative;
+}
+
+.book:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+.book img{
+
+  width:100%;
+
+  height:280px;
+
+  object-fit:cover;
+
+  border-radius:15px;
+
+  margin-bottom:15px;
+}
+
+.book h3{
+
+  color:#1e2a38;
+
+  margin-bottom:8px;
+
+  font-size:22px;
+}
+
+.penulis{
+
+  color:#777;
+
+  font-size:14px;
+
+  margin-bottom:12px;
+}
+
+.deskripsi{
+
+  font-size:15px;
+
+  color:#444;
+
+  margin-bottom:18px;
+
+  line-height:1.6;
+}
+
+.detail-btn{
+
+  display:inline-block;
+
+  padding:12px 20px;
+
+  background:#2f3e46;
+
+  color:#fff;
+
+  text-decoration:none;
+
+  border-radius:50px;
+
+  transition:0.3s;
+}
+
+.detail-btn:hover{
+
+  background:#c8b6a6;
+
+  color:#1e2a38;
+}
 .event{margin-top:50px;} .event-card{background:#fff;padding:20px;border-radius:15px;margin:20px 0;box-shadow:0 5px 15px rgba(0,0,0,0.2);} 
 .event-card button{padding:10px 20px;background:#2f3e46;color:#fff;border:none;border-radius:10px;cursor:pointer;}
 .event-card a{display:inline-block;margin-top:10px;color:#2f3e46;text-decoration:underline;}
@@ -203,14 +290,77 @@ footer{text-align:center;padding:30px 20px;color:#fff;} .profile-pic{width:150px
 </section>
 
 <section class="koleksi" id="koleksi">
-  <h2>Koleksi Buku</h2>
-  <div class="koleksi-grid">
-    <div class="book"><img src="https://via.placeholder.com/150"><p>Buku 1</p></div>
-    <div class="book"><img src="https://via.placeholder.com/150"><p>Buku 2</p></div>
-    <div class="book"><img src="https://via.placeholder.com/150"><p>Buku 3</p></div>
-  </div>
-</section>
 
+  <h2>Koleksi Buku</h2>
+
+  <div class="koleksi-grid">
+
+    <!-- BUKU 1 -->
+    <div class="book">
+
+      <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=600" alt="Buku">
+
+      <h3>Digital Library</h3>
+
+      <p class="penulis">
+        John Smith
+      </p>
+
+      <p class="deskripsi">
+        Buku tentang perkembangan perpustakaan digital di era modern.
+      </p>
+
+      <a href="#" class="detail-btn">
+        Detail Buku
+      </a>
+
+    </div>
+
+    <!-- BUKU 2 -->
+    <div class="book">
+
+      <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=600" alt="Buku">
+
+      <h3>Arsip Modern</h3>
+
+      <p class="penulis">
+        Sarah Wilson
+      </p>
+
+      <p class="deskripsi">
+        Panduan mengelola arsip digital secara efektif dan efisien.
+      </p>
+
+      <a href="#" class="detail-btn">
+        Detail Buku
+      </a>
+
+    </div>
+
+    <!-- BUKU 3 -->
+    <div class="book">
+
+      <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=600" alt="Buku">
+
+      <h3>Budaya Literasi</h3>
+
+      <p class="penulis">
+        Michael Brown
+      </p>
+
+      <p class="deskripsi">
+        Pentingnya budaya membaca bagi generasi muda Indonesia.
+      </p>
+
+      <a href="#" class="detail-btn">
+        Detail Buku
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 </div>
 
 
