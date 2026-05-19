@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AS-LiD | Kalkulator</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background: linear-gradient(135deg,#1e2a38,#3e4c59);
+  min-height:100vh;
+  padding:40px 20px;
+}
+
+/* HEADER */
+.header{
+  width:100%;
+  background:#2f3e46;
+
+  padding:25px 8%;
+
+  border-radius:20px;
+
+  margin-bottom:40px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.header h1{
+  color:#fff;
+  font-size:38px;
+}
+
+/* CONTAINER */
+.container{
+  max-width:600px;
+  margin:auto;
+
+  background:#fff;
+
+  padding:50px;
+
+  border-radius:30px;
+
+  box-shadow:0 15px 35px rgba(0,0,0,0.3);
+}
+
+.container h2{
+  color:#1e2a38;
+  margin-bottom:30px;
+  font-size:36px;
+}
+
+/* INPUT */
+input{
+  width:100%;
+  padding:15px;
+
+  margin-bottom:20px;
+
+  border:none;
+  outline:none;
+
+  border-radius:15px;
+
+  background:#f2f2f2;
+
+  font-size:18px;
+}
+
+/* BUTTON */
+.button-group{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+
+  margin-bottom:25px;
+}
+
+button{
+  padding:15px;
+
+  border:none;
+
+  border-radius:15px;
+
+  background:#2f3e46;
+  color:#fff;
+
+  font-size:18px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+button:hover{
+  background:#c8b6a6;
+  color:#1e2a38;
+
+  transform:translateY(-3px);
+}
+
+/* HASIL */
+.hasil{
+  background:#f2f2f2;
+
+  padding:20px;
+
+  border-radius:15px;
+
+  font-size:24px;
+  font-weight:600;
+
+  text-align:center;
+
+  color:#1e2a38;
+}
+
+/* BACK BUTTON */
+.back-btn{
+  display:inline-block;
+
+  margin-top:30px;
+
+  padding:14px 28px;
+
+  border-radius:50px;
+
+  background:#c8b6a6;
+
+  color:#1e2a38;
+
+  text-decoration:none;
+
+  font-weight:600;
+
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  background:#2f3e46;
+  color:#fff;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  .container{
+    padding:30px 20px;
+  }
+
+  .container h2{
+    font-size:28px;
+  }
+
+  .button-group{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>AS-LiD</h1>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <h2>Kalkulator Digital</h2>
+
+  <input type="number" id="angka1" placeholder="Masukkan angka pertama">
+
+  <input type="number" id="angka2" placeholder="Masukkan angka kedua">
+
+  <div class="button-group">
+
+    <button onclick="hitung('+')">+</button>
+
+    <button onclick="hitung('-')">−</button>
+
+    <button onclick="hitung('*')">×</button>
+
+    <button onclick="hitung('/')">÷</button>
+
+  </div>
+
+  <div class="hasil" id="hasil">
+    Hasil: -
+  </div>
+
+  <a href="index.html" class="back-btn">
+    Back to Home
+  </a>
+
+</div>
+
+<script>
+
+function hitung(operator){
+
+  let angka1 = parseFloat(document.getElementById("angka1").value);
+
+  let angka2 = parseFloat(document.getElementById("angka2").value);
+
+  let hasil = 0;
+
+  if(isNaN(angka1) || isNaN(angka2)){
+
+    document.getElementById("hasil").innerHTML = "Masukkan angka dulu!";
+    return;
+
+  }
+
+  switch(operator){
+
+    case '+':
+      hasil = angka1 + angka2;
+      break;
+
+    case '-':
+      hasil = angka1 - angka2;
+      break;
+
+    case '*':
+      hasil = angka1 * angka2;
+      break;
+
+    case '/':
+      hasil = angka1 / angka2;
+      break;
+
+  }
+
+  document.getElementById("hasil").innerHTML = "Hasil: " + hasil;
+
+}
+
+</script>
+
+</body>
+</html>
