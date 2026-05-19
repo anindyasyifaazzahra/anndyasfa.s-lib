@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,6 +8,8 @@
 <title>AS-LiD | Looping PHP</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
@@ -18,106 +21,340 @@
 }
 
 body{
-  background: linear-gradient(135deg,#1e2a38,#3e4c59);
-  min-height:100vh;
-  padding:40px 20px;
+
+  background:
+  linear-gradient(rgba(30,42,56,0.75), rgba(62,76,89,0.75)),
+  url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600');
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+
+  color:#333;
 }
 
-/* HEADER */
-.header{
+/* NAVBAR */
+nav{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  position:sticky;
+  top:0;
+
   width:100%;
-  background:#2f3e46;
-  padding:25px 8%;
-  border-radius:20px;
-  margin-bottom:40px;
 
-  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  padding:18px 8%;
+
+  background:rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid rgba(255,255,255,0.15);
+
+  box-shadow:0 4px 20px rgba(0,0,0,0.2);
+
+  z-index:9999;
 }
 
-.header h1{
+.logo-area{
+
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.logo{
+
+  width:60px;
+  height:60px;
+
+  object-fit:contain;
+}
+
+nav h1{
+
+  font-size:30px;
+
+  font-weight:700;
+
   color:#fff;
-  font-size:38px;
 }
 
-/* CARD */
-.container{
-  max-width:1100px;
-  margin:auto;
+nav ul{
 
-  background:#fff;
-  border-radius:30px;
+  display:flex;
+  gap:20px;
+
+  list-style:none;
+}
+
+nav a{
+
+  color:#fff;
+
+  text-decoration:none;
+
+  font-size:15px;
+
+  font-weight:500;
+
+  transition:0.3s;
+}
+
+nav a:hover{
+
+  color:#c8b6a6;
+}
+
+/* CONTAINER */
+.container{
+
+  width:90%;
+  max-width:1100px;
+
+  margin:50px auto;
+
+  background:rgba(255,255,255,0.96);
+
+  backdrop-filter:blur(10px);
+
+  border-radius:35px;
 
   padding:50px;
 
-  box-shadow:0 15px 35px rgba(0,0,0,0.3);
+  box-shadow:
+  0 15px 35px rgba(0,0,0,0.35);
 }
 
 /* TITLE */
 .container h2{
+
   color:#1e2a38;
-  margin-bottom:30px;
+
   font-size:40px;
+
+  margin-bottom:15px;
+}
+
+.container p{
+
+  color:#666;
+
+  margin-bottom:35px;
+
+  line-height:1.8;
 }
 
 /* BUTTON */
 .back-btn{
+
   display:inline-block;
 
-  background:#c8b6a6;
-  color:#1e2a38;
+  margin-bottom:35px;
 
   padding:14px 28px;
 
   border-radius:50px;
 
+  background:#2f3e46;
+
+  color:#fff;
+
   text-decoration:none;
+
   font-weight:600;
 
-  margin-bottom:35px;
-
   transition:0.3s;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
 }
 
 .back-btn:hover{
-  background:#2f3e46;
-  color:#fff;
+
+  background:#c8b6a6;
+
+  color:#1e2a38;
+
   transform:translateY(-3px);
 }
 
-/* LIST LOOPING */
+/* LOOP CONTAINER */
+.loop-wrapper{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+
+  gap:20px;
+}
+
+/* LOOP ITEM */
 .loop-item{
-  padding:18px 0;
-  border-bottom:1px solid #ddd;
+
+  background:#f8f8f8;
+
+  border-radius:22px;
+
+  padding:22px;
+
+  transition:0.3s;
+
+  border:1px solid #eee;
+
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.loop-item:hover{
+
+  transform:translateY(-5px);
+
+  background:#dde5d8;
+
+  box-shadow:0 12px 24px rgba(0,0,0,0.15);
+}
+
+.loop-item h3{
+
+  color:#1e2a38;
+
+  margin-bottom:10px;
 
   font-size:20px;
+}
 
-  color:#333;
+.loop-item p{
+
+  color:#555;
+
+  font-size:14px;
+
+  margin:0;
+}
+
+/* FOOTER */
+footer{
+
+  margin-top:70px;
+
+  background:rgba(15,23,30,0.92);
+
+  backdrop-filter:blur(12px);
+
+  padding:60px 8% 20px;
+
+  color:#fff;
+
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.footer-container{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+
+  gap:40px;
+
+  margin-bottom:40px;
+}
+
+.footer-box h3{
+
+  margin-bottom:20px;
+
+  color:#c8b6a6;
+
+  font-size:22px;
+}
+
+.footer-box p{
+
+  line-height:1.8;
+
+  color:#ddd;
+
+  font-size:14px;
+}
+
+.footer-social{
+
+  margin-top:20px;
+}
+
+.ig-link{
+
+  display:inline-flex;
+
+  justify-content:center;
+  align-items:center;
+
+  width:42px;
+  height:42px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.08);
+
+  color:#fff;
+
+  margin-right:10px;
+
+  text-decoration:none;
 
   transition:0.3s;
 }
 
-.loop-item:hover{
-  padding-left:10px;
-  color:#2f3e46;
+.ig-link:hover{
+
+  background:#c8b6a6;
+
+  color:#1e2a38;
+
+  transform:translateY(-4px);
 }
 
-/* RESPONSIVE */
+.footer-bottom{
+
+  text-align:center;
+
+  padding-top:20px;
+
+  border-top:1px solid rgba(255,255,255,0.1);
+
+  font-size:14px;
+
+  color:#bbb;
+}
+
+/* MOBILE */
 @media(max-width:768px){
 
+  nav{
+
+    flex-direction:column;
+
+    gap:15px;
+  }
+
+  nav ul{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+  }
+
   .container{
-    padding:30px 20px;
+
+    padding:35px 25px;
   }
 
   .container h2{
-    font-size:28px;
-  }
 
-  .header h1{
-    font-size:28px;
-  }
-
-  .loop-item{
-    font-size:16px;
+    font-size:30px;
   }
 
 }
@@ -126,30 +363,129 @@ body{
 </head>
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <h1>AS-LiD</h1>
-</div>
+<!-- NAVBAR -->
+<nav>
+
+  <div class="logo-area">
+
+    <img src="logo.png" class="logo">
+
+    <h1>AS-LiD</h1>
+
+  </div>
+
+  <ul>
+
+    <li><a href="index.html">Home</a></li>
+
+    <li><a href="koleksi.html">Koleksi</a></li>
+
+    <li><a href="event.html">Event</a></li>
+
+    <li><a href="looping.html">Looping</a></li>
+
+  </ul>
+
+</nav>
 
 <!-- CONTENT -->
 <div class="container">
 
   <h2>Belajar PHP - Looping 1000 Hari</h2>
 
+  <p>
+    Simulasi looping sederhana menggunakan JavaScript
+    untuk menampilkan proses belajar PHP selama 1000 hari.
+  </p>
+
   <a href="index.html" class="back-btn">
-    Back to Home
+    ← Back to Home
   </a>
 
-  <div id="loopContainer"></div>
+  <div class="loop-wrapper" id="loopContainer"></div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-container">
+
+  <div class="footer-box">
+
+    <h3>AS-LiD</h3>
+
+    <p>
+      AS-LiD adalah ruang literasi digital
+      yang menghadirkan buku,
+      arsip,
+      dan pengetahuan modern
+      untuk mendukung budaya membaca.
+    </p>
+
+  </div>
+
+  <div class="footer-box">
+
+    <h3>Menu</h3>
+
+    <p>Home</p>
+
+    <p>Koleksi</p>
+
+    <p>Event</p>
+
+    <p>Looping PHP</p>
+
+  </div>
+
+  <div class="footer-box">
+
+    <h3>Sosial Media</h3>
+
+    <div class="footer-social">
+
+      <a href="#" class="ig-link">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a href="#" class="ig-link">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+
+      <a href="#" class="ig-link">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footer-bottom">
+
+  &copy; 2026 AS-LiD | Access Sphere – Literature Digital
+
+</div>
+
+</footer>
 
 <script>
 
 for(let i = 1; i <= 1000; i++){
 
   document.getElementById("loopContainer").innerHTML += `
-  
+
     <div class="loop-item">
-      Ini adalah hari ke-${i} belajar PHP
+
+      <h3>Hari ke-${i}</h3>
+
+      <p>
+        Ini adalah proses belajar PHP
+        pada hari ke-${i}.
+      </p>
+
     </div>
 
   `;
@@ -158,7 +494,6 @@ for(let i = 1; i <= 1000; i++){
 
 </script>
 
-</div>
-
 </body>
 </html>
+```
