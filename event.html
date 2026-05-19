@@ -20,7 +20,6 @@
 }
 
 body{
-
   background:
   linear-gradient(rgba(30,42,56,0.7), rgba(62,76,89,0.7)),
   url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600');
@@ -34,10 +33,14 @@ body{
 
 /* NAVBAR */
 nav{
-
   display:flex;
   justify-content:space-between;
   align-items:center;
+
+  position:sticky;
+  top:0;
+
+  width:100%;
 
   padding:18px 8%;
 
@@ -45,78 +48,86 @@ nav{
 
   backdrop-filter:blur(12px);
 
-  position:sticky;
-  top:0;
+  border-bottom:1px solid rgba(255,255,255,0.15);
 
-  z-index:999;
+  box-shadow:0 4px 20px rgba(0,0,0,0.2);
+
+  z-index:9999;
+}
+
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.logo{
+  width:65px;
+  height:65px;
+  object-fit:contain;
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,0.25));
 }
 
 nav h1{
-  font-size:28px;
+  font-size:30px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:#fff;
 }
 
 nav ul{
-
   display:flex;
   gap:20px;
-
   list-style:none;
 }
 
 nav a{
-
   color:#fff;
-
   text-decoration:none;
-
+  font-size:15px;
+  font-weight:500;
   transition:0.3s;
 }
 
-nav a:hover{
+nav ul li a:hover{
   color:#c8b6a6;
+  transform:translateY(-2px);
+}
+
+.menu-toggle{
+  display:none;
+  font-size:24px;
+  cursor:pointer;
 }
 
 /* HERO */
 .hero{
-
   text-align:center;
-
   padding:100px 20px 70px;
 }
 
 .hero h2{
-
   font-size:48px;
-
   margin-bottom:20px;
 }
 
 .hero p{
-
   max-width:800px;
-
   margin:auto;
-
   line-height:1.8;
-
   color:#ddd;
 }
 
 /* CONTAINER */
 .container{
-
   width:90%;
-
   max-width:1200px;
-
   margin:auto;
 }
 
 /* GRID */
 .event-grid{
-
   display:grid;
-
   grid-template-columns:
   repeat(auto-fit,minmax(280px,1fr));
 
@@ -127,116 +138,175 @@ nav a:hover{
 
 /* CARD */
 .event-card{
-
   background:#fff;
-
   color:#333;
-
   border-radius:25px;
-
   overflow:hidden;
-
   transition:0.4s;
-
   box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .event-card:hover{
-
   transform:translateY(-8px);
 }
 
 .event-card img{
-
   width:100%;
-
   height:200px;
-
   object-fit:cover;
 }
 
 /* CONTENT */
 .event-content{
-
   padding:25px;
 }
 
 .event-category{
-
   display:inline-block;
-
   background:#dde5d8;
-
   color:#1e2a38;
-
   padding:6px 15px;
-
   border-radius:50px;
-
   font-size:13px;
-
   margin-bottom:15px;
 }
 
 .event-content h3{
-
   color:#1e2a38;
-
   margin-bottom:10px;
 }
 
 .event-date{
-
   color:#777;
-
   margin-bottom:15px;
 }
 
 .event-content p{
-
   line-height:1.7;
-
   margin-bottom:20px;
 }
 
 /* BUTTON */
 .event-btn{
-
   display:inline-block;
-
   padding:12px 20px;
-
   background:#2f3e46;
-
   color:#fff;
-
   text-decoration:none;
-
   border-radius:50px;
-
   transition:0.3s;
 }
 
 .event-btn:hover{
-
   background:#c8b6a6;
-
   color:#1e2a38;
 }
 
 /* FOOTER */
 footer{
-
   margin-top:60px;
-
   background:rgba(15,23,30,0.92);
+  backdrop-filter:blur(12px);
+  padding:60px 8% 20px;
+  color:#fff;
+  border-top:1px solid rgba(255,255,255,0.1);
+}
 
-  padding:30px;
+.footer-container{
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
 
+  gap:40px;
+
+  margin-bottom:40px;
+}
+
+.footer-box h3{
+  margin-bottom:20px;
+  color:#c8b6a6;
+  font-size:22px;
+}
+
+.footer-box h4{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.footer-box p{
+  line-height:1.8;
+  color:#ddd;
+  font-size:14px;
+}
+
+.profile-pic{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid rgba(255,255,255,0.15);
+  margin-bottom:15px;
+}
+
+.footer-social{
+  margin-top:20px;
+}
+
+.ig-link{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  margin-right:10px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.ig-link:hover{
+  background:#c8b6a6;
+  color:#1e2a38;
+  transform:translateY(-4px);
+}
+
+.footer-bottom{
   text-align:center;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  font-size:14px;
+  color:#bbb;
 }
 
 @media(max-width:768px){
+
+  nav ul{
+    position:fixed;
+    top:0;
+    right:-250px;
+    height:100vh;
+    width:250px;
+
+    flex-direction:column;
+
+    background:rgba(30,42,56,0.95);
+
+    backdrop-filter:blur(10px);
+
+    padding:80px 20px;
+
+    transition:0.4s;
+  }
+
+  nav ul.active{
+    right:0;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
 
   .hero h2{
     font-size:36px;
@@ -251,17 +321,27 @@ footer{
 <!-- NAVBAR -->
 <nav>
 
-  <h1>AS-LiD</h1>
+<div class="logo-area">
 
-  <ul>
+  <img src="logo.png" alt="AS-LiD Logo" class="logo">
 
-    <li><a href="index.html">Home</a></li>
+  <h1>AS - LiD</h1>
 
-    <li><a href="koleksi.html">Koleksi</a></li>
+</div>
 
-    <li><a href="event.html">Event</a></li>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-  </ul>
+<ul id="menu">
+
+  <li><a href="index.html">Home</a></li>
+
+  <li><a href="koleksi.html">Koleksi</a></li>
+
+  <li><a href="event.html">Event</a></li>
+
+  <li><a href="contact.html">Kontak</a></li>
+
+</ul>
 
 </nav>
 
@@ -379,11 +459,80 @@ footer{
 
 </div>
 
+<!-- FOOTER -->
 <footer>
 
-  &copy; 2026 AS-LiD | Digital Library Website
+<div class="footer-container">
+
+  <!-- KOLOM 1 -->
+  <div class="footer-box">
+
+    <h3>Developer Profile</h3>
+
+    <img src="foto.jpg" class="profile-pic">
+
+    <h4>Anindya Syifa Azzahra</h4>
+
+    <p>
+      Mahasiswa S-1 Perpustakaan dan Sains Informasi
+    </p>
+
+    <div class="footer-social">
+
+      <a href="https://www.instagram.com/anndyasfa" target="_blank" class="ig-link">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a href="https://anindyasyifaazzahra.github.io/CV.ANINDYA/" target="_blank" class="ig-link">
+        <i class="fa-solid fa-file"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- KOLOM 2 -->
+  <div class="footer-box">
+
+    <h3>AS-LiD</h3>
+
+    <p>
+      AS-LiD adalah ruang literasi digital
+      yang menghadirkan buku, arsip,
+      dan pengetahuan untuk mendukung
+      budaya membaca dan pembelajaran modern.
+    </p>
+
+  </div>
+
+  <!-- KOLOM 3 -->
+  <div class="footer-box">
+
+    <h3>Kontak</h3>
+
+    <p>📍 Medan, Sumatera Utara</p>
+
+    <p>📧 aslidlibrary@gmail.com</p>
+
+    <p>📞 +62 812-3456-7890</p>
+
+  </div>
+
+</div>
+
+<div class="footer-bottom">
+  &copy; 2026 AS-LiD | Access Sphere – Literature Digital
+</div>
 
 </footer>
+
+<script>
+
+function toggleMenu(){
+  document.getElementById('menu').classList.toggle('active');
+}
+
+</script>
 
 </body>
 </html>
