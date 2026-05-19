@@ -3,232 +3,215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Login - AS-LiD</title>
-  
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
+
 <style>
+
+/* =========================
+   RESET
+========================= */
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
 }
 
-/* BACKGROUND SAMA SEPERTI INDEX */
+/* =========================
+   BODY
+========================= */
 body{
-  background:
-  linear-gradient(rgba(30,42,56,0.7), rgba(62,76,89,0.7)),
-  url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600');
+    min-height:100vh;
 
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 
-  color:#333;
-}
-  .scrapbook{
-  margin:40px auto;
-  width:90%;
-  max-width:1000px;
+    background:
+    linear-gradient(rgba(30,42,56,0.75), rgba(62,76,89,0.75)),
+    url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600');
 
-  background:#c8b6a6;
-
-  border-radius:25px;
-
-  padding:30px;
-
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
-.form-container {
-background: #f5f1e8;
-padding: 40px;
-border-radius: 20px;
-width: 400px;
-    position: relative;
-
-
-}
-.close-btn {
-    position: relative;
-    position: absolute;
-top: 15px;
-right: 20px;
-font-size: 22px;
-cursor: pointer;
-color: #333;
-text-decoration: none;
-font-weight: bold;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 }
 
-.close-btn:hover {
-color: #1e2a38;
-transform: scale(1.2);
-transition: 0.2s ease;
-}
-h2 {
-text-align: center;
-}
+/* =========================
+   LOGIN SECTION
+========================= */
+.login-wrapper{
+    flex:1;
 
-input {
-width: 100%;
-padding: 10px;
-margin: 10px 0;
-border-radius: 8px;
-border: 1px solid #ccc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px 20px;
 }
 
-button {
-width: 100%;
-padding: 12px;
-background: #2f3e46;
-color: white;
-border: none;
-border-radius: 10px;
-cursor: pointer;
-}
-  footer{
+/* =========================
+   FORM CONTAINER
+========================= */
+.form-container{
+    width:100%;
+    max-width:420px;
 
-  margin-top:60px;
+    background:#f5f1e8;
 
-  background:rgba(15,23,30,0.92);
+    padding:40px 35px;
 
-  backdrop-filter:blur(12px);
+    border-radius:25px;
 
-  padding:60px 8% 20px;
+    position:relative;
 
-  color:#fff;
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.25);
 
-  border-top:1px solid rgba(255,255,255,0.1);
+    animation:fadeIn 0.5s ease;
 }
 
-.footer-container{
+/* =========================
+   CLOSE BUTTON
+========================= */
+.close-btn{
+    position:absolute;
+    top:15px;
+    right:20px;
 
-  display:grid;
+    font-size:22px;
+    font-weight:bold;
 
-  grid-template-columns:
-  repeat(auto-fit,minmax(250px,1fr));
+    color:#333;
+    text-decoration:none;
 
-  gap:40px;
-
-  margin-bottom:40px;
+    transition:0.3s ease;
 }
 
-.footer-box h3{
-
-  margin-bottom:20px;
-
-  color:#c8b6a6;
-
-  font-size:22px;
+.close-btn:hover{
+    color:#1e2a38;
+    transform:scale(1.2);
 }
 
-.footer-box h4{
+/* =========================
+   TITLE
+========================= */
+.form-container h2{
+    text-align:center;
+    margin-bottom:30px;
 
-  margin-top:10px;
-
-  margin-bottom:10px;
+    color:#1e2a38;
+    font-size:30px;
 }
 
-.footer-box p{
-
-  line-height:1.8;
-
-  color:#ddd;
-
-  font-size:14px;
+/* =========================
+   INPUT
+========================= */
+.input-box{
+    position:relative;
+    margin-bottom:20px;
 }
 
-.profile-pic{
+.input-box input{
+    width:100%;
 
-  width:110px;
+    padding:14px 15px;
 
-  height:110px;
+    border:1px solid #ccc;
+    border-radius:12px;
 
-  border-radius:50%;
+    font-size:15px;
 
-  object-fit:cover;
+    outline:none;
 
-  border:4px solid rgba(255,255,255,0.15);
-
-  margin-bottom:15px;
+    transition:0.3s;
 }
 
-.footer-social{
-  margin-top:20px;
+.input-box input:focus{
+    border-color:#2f3e46;
+    box-shadow:0 0 0 3px rgba(47,62,70,0.15);
 }
 
-.ig-link{
+/* =========================
+   BUTTON
+========================= */
+button{
+    width:100%;
 
-  display:inline-flex;
+    padding:14px;
 
-  justify-content:center;
+    border:none;
+    border-radius:12px;
 
-  align-items:center;
+    background:#2f3e46;
+    color:white;
 
-  width:42px;
+    font-size:16px;
+    font-weight:600;
 
-  height:42px;
+    cursor:pointer;
 
-  border-radius:50%;
-
-  background:rgba(255,255,255,0.08);
-
-  color:#fff;
-
-  margin-right:10px;
-
-  text-decoration:none;
-
-  transition:0.3s;
+    transition:0.3s ease;
 }
 
-.ig-link:hover{
+button:hover{
+    background:#1e2a38;
+    transform:translateY(-2px);
+}
 
-  background:#c8b6a6;
+/* =========================
+   FOOTER
+========================= */
+footer{
+    background:rgba(15,23,30,0.92);
 
-  color:#1e2a38;
+    backdrop-filter:blur(12px);
 
-  transform:translateY(-4px);
+    padding:20px;
+
+    border-top:1px solid rgba(255,255,255,0.1);
 }
 
 .footer-bottom{
+    text-align:center;
 
-  text-align:center;
-
-  padding-top:20px;
-
-  border-top:1px solid rgba(255,255,255,0.1);
-
-  font-size:14px;
-
-  color:#bbb;
+    font-size:14px;
+    color:#bbb;
 }
 
-/* MOBILE */
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 @media(max-width:768px){
 
-  nav{
-    padding:18px 5%;
-  }
+    .form-container{
+        padding:35px 25px;
+    }
 
-  nav h1{
-    font-size:24px;
-  }
-
-  .logo{
-    width:55px;
-    height:55px;
-  }
-
-  .container{
-    padding:30px 20px;
-  }
-
-  .hero h2{
-    font-size:32px;
-  }
+    .form-container h2{
+        font-size:26px;
+    }
 
 }
 
@@ -237,41 +220,86 @@ cursor: pointer;
 
 <body>
 
-<div class="form-container">
-<h2>Login</h2>
-<a href="index.html" class="close-btn">✕</a>
-<form id="loginForm">
-<input type="email" placeholder="Email" required>
-<input type="password" placeholder="Password" required>
-<button type="submit">Login</button>
-</form>
-</div>
-  
+<!-- LOGIN -->
+<section class="login-wrapper">
+
+    <div class="form-container">
+
+        <a href="index.html" class="close-btn">✕</a>
+
+        <h2>Login</h2>
+
+        <form id="loginForm">
+
+            <div class="input-box">
+                <input type="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Login
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
 <footer>
 
-<div class="footer-bottom">
-  &copy; 2026 AS-LiD | Access Sphere – Literature Digital
-</div>
+    <div class="footer-bottom">
+        &copy; 2026 AS-LiD | Access Sphere – Literature Digital
+    </div>
 
 </footer>
-  
+
+<!-- SCRIPT -->
 <script>
-document.getElementById("loginForm").addEventListener("submit", function(e) {
-e.preventDefault();
 
-let storedUser = JSON.parse(localStorage.getItem("user"));
+document.getElementById("loginForm")
+.addEventListener("submit", function(e){
 
-let email = this.querySelectorAll("input")[0].value;
-let password = this.querySelectorAll("input")[1].value;
+    e.preventDefault();
 
-if(storedUser && email === storedUser.email && password === storedUser.password){
-localStorage.setItem("isLoggedIn", "true");
-localStorage.setItem("currentUser", storedUser.email);
-window.location.href = "index.html";
-} else {
-alert("Email atau password salah!");
-}
+    let storedUser =
+    JSON.parse(localStorage.getItem("user"));
+
+    let email =
+    this.querySelectorAll("input")[0].value;
+
+    let password =
+    this.querySelectorAll("input")[1].value;
+
+    if(
+        storedUser &&
+        email === storedUser.email &&
+        password === storedUser.password
+    ){
+
+        localStorage.setItem("isLoggedIn", "true");
+
+        localStorage.setItem(
+            "currentUser",
+            storedUser.email
+        );
+
+        /* PINDAH KE HOME */
+        window.location.href = "index.html";
+
+    }else{
+
+        alert("Email atau password salah!");
+
+    }
+
 });
+
 </script>
 
 </body>
