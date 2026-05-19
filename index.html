@@ -106,8 +106,74 @@ nav a{color:#fff;text-decoration:none;}
 .animate{opacity:0;transform:translateY(40px);transition:0.6s;} .animate.show{opacity:1;transform:translateY(0);} 
 .hero{text-align:center;margin-bottom:40px;} .hero h2{font-size:40px;color:#1e2a38;} .hero p{margin:20px auto;max-width:700px;} .hero a{display:inline-block;padding:12px 25px;background:#2f3e46;color:#fff;border-radius:25px;}
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;} .feature-card{background:#dde5d8;padding:25px;border-radius:20px;text-align:center;transition:.3s;} .feature-card:hover{transform:translateY(-5px);} 
-.koleksi{margin-top:50px;} .koleksi h2{text-align:center;margin-bottom:20px;color:#1e2a38;} .koleksi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;} 
-.book{
+.koleksi{
+  margin-top:50px;
+}
+
+/* HEADER */
+.koleksi-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:25px;
+
+  flex-wrap:wrap;
+
+  gap:15px;
+}
+
+.koleksi h2{
+  color:#1e2a38;
+}
+
+/* GRID */
+.koleksi-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+  gap:25px;
+}
+
+/* BUTTON LIHAT SEMUA */
+.lihat-btn{
+
+  padding:12px 22px;
+
+  border:none;
+
+  border-radius:50px;
+
+  background:#2f3e46;
+
+  color:#fff;
+
+  font-weight:600;
+
+  font-size:15px;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
+  cursor:not-allowed;
+
+  opacity:0.85;
+
+  transition:0.3s;
+}
+
+.lihat-btn:hover{
+
+  transform:translateY(-3px);
+
+  background:#c8b6a6;
+
+  color:#1e2a38;
+}.book{
 
   background:#fff;
 
@@ -291,7 +357,15 @@ footer{text-align:center;padding:30px 20px;color:#fff;} .profile-pic{width:150px
 
 <section class="koleksi" id="koleksi">
 
+ <div class="koleksi-header">
+
   <h2>Koleksi Buku</h2>
+
+  <button class="lihat-btn" disabled>
+    Lihat Semua →
+  </button>
+
+</div>
 
   <div class="koleksi-grid">
 
