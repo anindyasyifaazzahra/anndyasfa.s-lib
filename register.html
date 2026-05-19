@@ -5,257 +5,282 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daftar - AS-LiD</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-  background:
-  linear-gradient(rgba(30,42,56,0.7), rgba(62,76,89,0.7)),
-  url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600');
+    font-family:'Poppins', sans-serif;
 
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
+    min-height:100vh;
 
-  color:#333;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    background:
+    linear-gradient(rgba(30,42,56,0.75), rgba(62,76,89,0.75)),
+    url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    color:#333;
 }
 
-.scrapbook{
-  margin:40px auto;
-  width:90%;
-  max-width:1000px;
+/* =========================
+   FORM CONTAINER
+========================= */
 
-  background:#c8b6a6;
+.main-content{
+    flex:1;
 
-  border-radius:25px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-  padding:30px;
-
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    padding:50px 20px;
 }
 
-.form-container {
-background: #f5f1e8;
-padding: 40px;
-border-radius: 20px;
-width: 700px;
-position: relative;
+.form-container{
+    width:100%;
+    max-width:750px;
+
+    background:#f5f1e8;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    position:relative;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
 }
 
-.close-btn {
-position: absolute;
-top: 15px;
-right: 20px;
-font-size: 22px;
-cursor: pointer;
-color: #333;
-text-decoration: none;
-font-weight: bold;
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-btn{
+    position:absolute;
+
+    top:18px;
+    right:22px;
+
+    font-size:24px;
+
+    color:#333;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:0.3s ease;
 }
 
-.close-btn:hover {
-color: #1e2a38;
-transform: scale(1.2);
-transition: 0.2s ease;
-}
-h2 {
-text-align: center;
+.close-btn:hover{
+    color:#1e2a38;
+    transform:scale(1.15);
 }
 
-form {
-display: flex;
-flex-wrap: wrap;
-gap: 15px;
+/* =========================
+   TITLE
+========================= */
+
+h2{
+    text-align:center;
+
+    margin-bottom:30px;
+
+    color:#1e2a38;
+
+    font-size:30px;
 }
 
-input {
-flex: 1 1 45%;
-padding: 10px;
-border-radius: 8px;
-border: 1px solid #ccc;
+/* =========================
+   FORM
+========================= */
+
+form{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
 }
 
-button {
-width: 100%;
-padding: 12px;
-background: #2f3e46;
-color: white;
-border: none;
-border-radius: 10px;
-cursor: pointer;
-margin-top: 15px;
+input{
+    flex:1 1 45%;
+
+    padding:14px 16px;
+
+    border-radius:10px;
+
+    border:1px solid #ccc;
+
+    font-size:15px;
+
+    font-family:'Poppins', sans-serif;
+
+    outline:none;
+
+    transition:0.3s ease;
 }
 
-button:hover {
-background: #1e2a38;
+input:focus{
+    border-color:#2f3e46;
+    box-shadow:0 0 8px rgba(47,62,70,0.2);
 }
+
+/* =========================
+   BUTTON
+========================= */
+
+button{
+    width:100%;
+
+    padding:14px;
+
+    margin-top:10px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2f3e46;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+}
+
+button:hover{
+    background:#1e2a38;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
+    background:rgba(15,23,30,0.92);
 
-  margin-top:60px;
+    backdrop-filter:blur(10px);
 
-  background:rgba(15,23,30,0.92);
+    padding:20px;
 
-  backdrop-filter:blur(12px);
+    text-align:center;
 
-  padding:60px 8% 20px;
+    color:#bbb;
 
-  color:#fff;
+    font-size:14px;
 
-  border-top:1px solid rgba(255,255,255,0.1);
+    border-top:1px solid rgba(255,255,255,0.1);
 }
 
-.footer-container{
+/* =========================
+   RESPONSIVE
+========================= */
 
-  display:grid;
+@media(max-width:768px){
 
-  grid-template-columns:
-  repeat(auto-fit,minmax(250px,1fr));
+    .form-container{
+        padding:30px 20px;
+    }
 
-  gap:40px;
+    input{
+        flex:1 1 100%;
+    }
 
-  margin-bottom:40px;
+    h2{
+        font-size:25px;
+    }
 }
 
-.footer-box h3{
-
-  margin-bottom:20px;
-
-  color:#c8b6a6;
-
-  font-size:22px;
-}
-
-.footer-box h4{
-
-  margin-top:10px;
-
-  margin-bottom:10px;
-}
-
-.footer-box p{
-
-  line-height:1.8;
-
-  color:#ddd;
-
-  font-size:14px;
-}
-
-.profile-pic{
-
-  width:110px;
-
-  height:110px;
-
-  border-radius:50%;
-
-  object-fit:cover;
-
-  border:4px solid rgba(255,255,255,0.15);
-
-  margin-bottom:15px;
-}
-
-.footer-social{
-  margin-top:20px;
-}
-
-.ig-link{
-
-  display:inline-flex;
-
-  justify-content:center;
-
-  align-items:center;
-
-  width:42px;
-
-  height:42px;
-
-  border-radius:50%;
-
-  background:rgba(255,255,255,0.08);
-
-  color:#fff;
-
-  margin-right:10px;
-
-  text-decoration:none;
-
-  transition:0.3s;
-}
-
-.ig-link:hover{
-
-  background:#c8b6a6;
-
-  color:#1e2a38;
-
-  transform:translateY(-4px);
-}
-
-.footer-bottom{
-
-  text-align:center;
-
-  padding-top:20px;
-
-  border-top:1px solid rgba(255,255,255,0.1);
-
-  font-size:14px;
-
-  color:#bbb;
-}
 </style>
 </head>
 
 <body>
 
-<div class="form-container">
+<div class="main-content">
 
-<a href="index.html" class="close-btn">✕</a>
+    <div class="form-container">
 
-<h2>Form Pendaftaran</h2>
+        <a href="index.html" class="close-btn">✕</a>
 
-<form id="registerForm">
-        <input type="text" placeholder="First Name" required>
-        <input type="text" placeholder="Last Name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="tel" placeholder="Phone" required>
-        <input type="password" placeholder="Create New Password" required>
-        <input type="password" placeholder="Confirm New Password" required>
-<button type="submit">Daftar</button>
-</form>
+        <h2>Form Pendaftaran</h2>
+
+        <form id="registerForm">
+
+            <input type="text" placeholder="First Name" required>
+
+            <input type="text" placeholder="Last Name" required>
+
+            <input type="email" placeholder="Email" required>
+
+            <input type="tel" placeholder="Phone" required>
+
+            <input type="password" placeholder="Create New Password" required>
+
+            <input type="password" placeholder="Confirm New Password" required>
+
+            <button type="submit">Daftar</button>
+
+        </form>
+
+    </div>
+
 </div>
-  
+
+<footer>
+    &copy; 2026 AS-LiD | Access Sphere – Literature Digital
+</footer>
+
 <script>
-document.getElementById("registerForm").addEventListener("submit", function(e) {
-e.preventDefault();
+
+document.getElementById("registerForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
 
     let inputs = this.querySelectorAll("input");
 
+    // Validasi password
+    if(inputs[4].value !== inputs[5].value){
+
+        alert("Password tidak cocok!");
+        return;
+    }
+
     let user = {
-        firstName: inputs[0].value,
-        lastName: inputs[1].value,
-        email: inputs[2].value,
-        phone: inputs[3].value,
-        password: inputs[4].value
+
+        firstName : inputs[0].value,
+        lastName  : inputs[1].value,
+        email     : inputs[2].value,
+        phone     : inputs[3].value,
+        password  : inputs[4].value
     };
 
     localStorage.setItem("user", JSON.stringify(user));
 
-alert("Pendaftaran berhasil! Silakan login.");
-window.location.href = "login.html";
+    alert("Pendaftaran berhasil! Silakan login.");
+
+    window.location.href = "login.html";
+
 });
 
 </script>
 
 </body>
-  <footer>
-
-<div class="footer-bottom">
-  &copy; 2026 AS-LiD | Access Sphere – Literature Digital
-</div>
-
-</footer>
 </html>
