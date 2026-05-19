@@ -47,6 +47,7 @@ nav{
 
   z-index:9999;
 }
+  .logo-area{ display:flex; align-items:center; gap:12px; } .logo{ width:48px; height:48px; object-fit:contain; border-radius:50%; background:rgba(255,255,255,0.08); padding:5px; box-shadow:0 4px 10px rgba(0,0,0,0.2); }
   
 nav h1{
 
@@ -793,7 +794,7 @@ footer{
 <body>
 
 <nav>
-  <h1>AS - LiD</h1>
+<div class="logo-area"> <img src="logo.png" alt="AS-LiD Logo" class="logo"> <h1>AS - LiD</h1> </div>
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   <ul id="menu">
     <li><a href="#">Home</a></li>
