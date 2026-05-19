@@ -1251,7 +1251,7 @@ function openForm(eventName){
     return;
   }
 
-  let user = JSON.parse(localStorage.getItem("user"));
+  let user = JSON.parse(localStorage.getItem("currentUser"));
 
   document.getElementById('formModal').style.display='flex';
   document.getElementById('eventName').value=eventName;
@@ -1313,7 +1313,7 @@ window.onload=function(){
     localStorage.getItem("isLoggedIn")==="true";
 
   let user =
-    JSON.parse(localStorage.getItem("user"));
+    JSON.parse(localStorage.getItem("currentUser"));
 
   if(isLoggedIn && user){
 
@@ -1334,15 +1334,7 @@ window.onload=function(){
     document.getElementById("logoutLink").onclick=function(){
 
       // logout tanpa hapus anggota
-      localStorage.removeItem("isLoggedIn");
-
-      localStorage.removeItem("user");
-
-      location.reload();
-    }
-
-  }
-
+      localStorage.removeItem("isLoggedIn"); localStorage.removeItem("currentUser"); location.reload();
   // ANIMASI
   const observer = new IntersectionObserver(entries=>{
 
