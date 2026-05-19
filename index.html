@@ -1262,8 +1262,9 @@ function openForm(eventName){
 
   }
 
-  let user =
-    JSON.parse(localStorage.getItem("currentUser"));
+ let userData = localStorage.getItem("currentUser");
+
+let user = userData ? JSON.parse(userData) : null;
 
   document.getElementById('formModal').style.display='flex';
 
@@ -1351,8 +1352,9 @@ window.onload = function(){
   let isLoggedIn =
     localStorage.getItem("isLoggedIn") === "true";
 
-  let user =
-    JSON.parse(localStorage.getItem("currentUser"));
+ let userData = localStorage.getItem("currentUser");
+
+let user = userData ? JSON.parse(userData) : null;
 
   if(isLoggedIn && user){
 
